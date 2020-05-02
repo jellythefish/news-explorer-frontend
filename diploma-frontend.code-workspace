@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../news-explorer-backend"
+		},
+		{
+			"path": "../mesto-frontend"
+		}
+	],
+	"settings": {}
+}
