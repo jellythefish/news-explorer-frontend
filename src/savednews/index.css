@@ -1,0 +1,11 @@
+@import url('./vendor/normalize.css');
+@import url('./vendor/fonts.css');
+@import url('./blocks/header/header.css');
+
+.page {
+  position: relative;
+  margin: auto;
+  max-width: 1440px;
+  min-width: 320px;
+  min-height: 100vh;
+}

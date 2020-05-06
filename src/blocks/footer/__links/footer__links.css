@@ -1,0 +1,35 @@
+.footer__links {
+  position: absolute;
+  right: 104px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1440px) {
+  .footer__links {
+    right: 7.2222vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer__links {
+    right: 5.2083vw;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .footer__links {
+    position: static;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .footer__links {
+    width: 90%;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,4 @@
+.header__link-wrapper_visible {
+  display: flex;
+  align-items: center;
+}

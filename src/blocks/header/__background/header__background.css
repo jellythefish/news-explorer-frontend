@@ -1,0 +1,23 @@
+.header__background {
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 320px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1440px) {
+  .header__background {
+    min-height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__background {
+    height: calc(400px + (768px - 100vw));
+    max-height: 536px;
+  }
+}

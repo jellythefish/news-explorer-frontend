@@ -1,0 +1,22 @@
+@import url('./__copyright/footer__copyright.css');
+@import url('./__link/footer__link.css');
+@import url('./__links/footer__links.css');
+@import url('./__text-links/footer__text-links.css');
+@import url('./__logo-links/footer__logo-links.css');
+
+.footer {
+  position: relative;
+  min-height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 710px) {
+  .footer {
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+}

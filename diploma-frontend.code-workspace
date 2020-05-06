@@ -1,14 +1,13 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "..\\mesto-frontend"
 		},
 		{
-			"path": "../news-explorer-backend"
+			"path": "..\\news-explorer-backend"
 		},
 		{
-			"path": "../mesto-frontend"
+			"path": "..\\news-explorer-frontend"
 		}
-	],
-	"settings": {}
+	]
 }
