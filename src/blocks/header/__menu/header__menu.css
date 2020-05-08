@@ -20,6 +20,20 @@
   opacity: 0.7;
 }
 
+.header__popup {
+  width: 100px;
+  height: 100px;
+  border: 1px solid blue;
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
+.header__menu:focus ~ .header__popup,
+.header__menu:active ~ .header__popup,
+.header__popup:hover {
+  display: block;
+}
 
 @media screen and (max-width: 620px) {
   .header__menu {

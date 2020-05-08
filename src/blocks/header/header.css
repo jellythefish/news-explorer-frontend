@@ -10,6 +10,7 @@
 @import url('./__link-wrapper/header__link-wrapper.css');
 @import url('./__menu/header__menu.css');
 @import url('./__picture/header__picture.css');
+@import url('./__popup/header__popup.css');
 
 .header {
   position: relative;

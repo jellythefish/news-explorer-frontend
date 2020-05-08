@@ -29,6 +29,83 @@
       </div>
       <button type="button" class="header__menu header__menu_black"></button>
     </header>
+    <section class="saved-news">
+    <div class="saved-news__stats">
+      <h2 class="saved-news__title">Сохраненные статьи</h2>
+      <p class="saved-news__counter">Святослав, у вас 5 сохраненных статей</p>
+      <p class="saved-news__keywords">По ключевым словам: <strong class="saved-news__keyword-1">Природа</strong>,
+        <strong class="saved-news__keyword-2">Тайга</strong> и <strong class="saved-news__keyword-others">2 другим</strong>.</p>
+    </div>
+      <div class="saved-news__container">
+        <div class="article-grid">
+          <div class="article">
+            <p class="article__tag">Природа</p>
+            <img src="<%= require('../images/card-4.png').default %>" alt="card-4" class="article__image">
+            <button class="article__icon article__icon_delete"></button>
+            <button class="article__icon-helper">Убрать из сохраненных</button>
+            <div class="article__text-content">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">Национальное достояние – парки</h3>
+              <p class="article__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
+                система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+              <h4 class="article__source">Дзен</h4>
+            </div>
+          </div>
+          <div class="article">
+            <p class="article__tag">Природа</p>
+            <img src="<%= require('../images/card-5.png').default %>" alt="card-5" class="article__image">
+            <button class="article__icon article__icon_delete"></button>
+            <button class="article__icon-helper article__icon-helper_visible">Убрать из сохраненных</button>
+            <div class="article__text-content">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">Лесные огоньки: история одной фотографии</h3>
+              <p class="article__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
+                запечатлеть ускользающую красоту одного из местных чудес природы.</p>
+              <h4 class="article__source">Афиша</h4>
+            </div>
+          </div>
+          <div class="article">
+            <p class="article__tag">Тайга</p>
+            <img src="<%= require('../images/card-6.png').default %>" alt="card-6" class="article__image">
+            <button class="article__icon article__icon_delete"></button>
+            <button class="article__icon-helper article__icon-helper_hidden">Убрать из сохраненных</button>
+            <div class="article__text-content">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+              <p class="article__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о
+                необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+              <h4 class="article__source">Медиазона</h4>
+            </div>
+          </div>
+          <div class="article">
+            <p class="article__tag">Парки</p>
+            <img src="<%= require('../images/card-4.png').default %>" alt="card-4" class="article__image">
+            <button class="article__icon article__icon_delete"></button>
+            <button class="article__icon-helper">Убрать из сохраненных</button>
+            <div class="article__text-content">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">Национальное достояние – парки</h3>
+              <p class="article__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
+                система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+              <h4 class="article__source">Дзен</h4>
+            </div>
+          </div>
+          <div class="article">
+            <p class="article__tag">Фотография</p>
+            <img src="<%= require('../images/card-5.png').default %>" alt="card-5" class="article__image">
+            <button class="article__icon article__icon_delete"></button>
+            <button class="article__icon-helper article__icon-helper_visible">Убрать из сохраненных</button>
+            <div class="article__text-content">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">Лесные огоньки: история одной фотографии</h3>
+              <p class="article__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
+                запечатлеть ускользающую красоту одного из местных чудес природы.</p>
+              <h4 class="article__source">Афиша</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Supersite, Powered by News API</p>
       <div class="footer__links">

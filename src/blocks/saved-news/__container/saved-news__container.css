@@ -1,0 +1,5 @@
+.saved-news__container {
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: #F5F6F7;
+}

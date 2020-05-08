@@ -1,0 +1,15 @@
+@import url('./__more/results__more.css');
+@import url('./__title/results__title.css');
+@import url('./__status/results__status.css');
+@import url('./__preloading/results__preloading.css');
+@import url('./__container/results__container.css');
+@import url('./__not-found-icon/results__not-found-icon.css');
+@import url('./__not-found-text/results__not-found-text.css');
+@import url('./__not-found-title/results__not-found-title.css');
+@import url('./__not-found/results__not-found.css');
+
+.results {
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: #F5F6F7;
+}

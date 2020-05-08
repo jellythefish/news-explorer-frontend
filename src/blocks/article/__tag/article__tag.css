@@ -1,0 +1,40 @@
+.article__tag {
+  height: 40px;
+  padding: 0 15px 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .article__tag {
+    left: 1.6666vw;
+    top: 1.6666vw;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .article__tag {
+    left: 8px;
+    top: 8px;
+  }
+}
+
+@media screen and (max-width: 732px) {
+  .article__tag {
+    display: none;
+  }
+}

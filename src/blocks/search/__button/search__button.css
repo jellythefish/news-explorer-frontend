@@ -16,6 +16,7 @@
   transition: background-color .4s linear 0s;
   outline: none;
   padding: 0;
+  cursor: pointer;
 }
 .search__button:hover {
   background-color: #347EFF;

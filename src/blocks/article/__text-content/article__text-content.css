@@ -1,0 +1,24 @@
+.article__text-content {
+  width: 352px;
+  margin: 20px auto 0;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .article__text-content {
+    margin: 1.3888vw auto 0;
+    width: 24.4444vw;
+  }
+}
+
+@media screen and (max-width: 1152px) {
+  .article__text-content {
+    margin: 16px auto 0;
+  }
+}
+
+@media screen and (max-width: 732px) {
+  .article__text-content {
+    width: 256px;
+  }
+}
