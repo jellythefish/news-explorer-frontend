@@ -1,0 +1,21 @@
+.header__button_normal {
+  padding: 0 19px 0;
+  min-height: 48px;
+  margin: 0 0 0 32px;
+}
+
+@media screen and (max-width: 1440px) {
+  .header__button_normal {
+    margin: 0 0 0 2.2222vw;
+    height: 3.3333vw;
+    min-height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__button_normal {
+    height: 3.3333vw;
+    padding: 0 15px 0;
+    margin: 0 0 0 16px;
+  }
+}

@@ -2,25 +2,5 @@
 @import url('./_selected-white/header__link-wrapper_selected-white.css');
 @import url('./_hidden/header__link-wrapper_hidden.css');
 @import url('./_visible/header__link-wrapper_visible.css');
-
-.header__link-wrapper {
-  height: 100%;
-  margin: 0 0 0 32px;
-}
-
-.header__link-wrapper:first-of-type {
-  margin: 0;
-}
-
-@media screen and (max-width: 1440px) {
-  .header__link-wrapper {
-    margin: 0 0 0 2.2222vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .header__link-wrapper {
-    margin: 0 0 0 16px;
-  }
-}
-
+@import url('./_normal/header__link-wrapper_normal.css');
+@import url('./_popup/header__link-wrapper_popup.css');

@@ -1,0 +1,13 @@
+.popup__field-name {
+  margin: 13px 0 0 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2F71E5;
+}
+
+.popup__field-name:first-of-type {
+  margin: 0;
+}

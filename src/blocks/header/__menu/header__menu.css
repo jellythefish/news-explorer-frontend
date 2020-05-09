@@ -1,38 +1,23 @@
 @import url('./_black/header__menu_black.css');
 @import url('./_white/header__menu_white.css');
+@import url('./_popup/header__menu_popup.css');
 
 .header__menu {
-  display: none;
   position: absolute;
   right: 32px;
   width: 24px;
   height: 24px;
-  transition: opacity 0.4s linear 0s;
   background-color: transparent;
-  background-position: center;
   border: 0;
   padding: 0;
   cursor: pointer;
+  outline: none;
   opacity: 1;
+  transition: opacity 0.4s linear 0s;
 }
 
 .header__menu:hover {
   opacity: 0.7;
-}
-
-.header__popup {
-  width: 100px;
-  height: 100px;
-  border: 1px solid blue;
-  display: none;
-  position: absolute;
-  top: 60px;
-  left: 20px;
-}
-.header__menu:focus ~ .header__popup,
-.header__menu:active ~ .header__popup,
-.header__popup:hover {
-  display: block;
 }
 
 @media screen and (max-width: 620px) {

@@ -9,11 +9,10 @@
 @import url('./blocks/article-grid/article-grid.css');
 @import url('./blocks/article/article.css');
 @import url('./blocks/circle-preloader/circle-preloader.css');
-@import url('./blocks/saved-news/saved-news.css');
+@import url('./blocks/popup/popup.css');
 
 .page {
   position: relative;
-  box-sizing: border-box;
   margin: auto;
   max-width: 1440px;
   min-width: 320px;

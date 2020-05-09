@@ -1,3 +1,4 @@
 .header__menu_white {
+  display: none;
   background-image: url('../../../../images/menu-icon_white.svg');
 }
