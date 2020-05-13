@@ -7,43 +7,43 @@
   <title>News-Explorer</title>
   <meta name="author" content="Svyatoslav Krasnov">
   <meta name="description" content="The web-application for searching and storing news articles">
-  <link rel="icon" type="image/png" href=".././images/favicon.png">
-  <link rel="stylesheet" href="main/main.e244c645953e925be33d.css">
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="main/main.0c32ebd5fd1c19463dad.css">
 </head>
 <body>
   <div class="page">
     <header class="header header_transparent">
       <picture class="header__picture">
-        <source media="(max-width: 768px)" srcset=".././images/background_medium.png">
-        <source media="(max-width: 320px)" srcset=".././images/background_small.png">
-        <img class="header__background" src=".././images/background_large.jpg" alt="Background image">
+        <source media="(max-width: 768px)" srcset="./images/background_medium.png">
+        <source media="(max-width: 320px)" srcset="./images/background_small.png">
+        <img class="header__background" src="./images/background_large.jpg" alt="Background image">
       </picture>
       <h1 class="header__title header__title_white">NewsExplorer</h1>
-      <a href="#menu" class="header__menu header__menu_white"></a>
+      <button class="header__menu header__menu_white"></button>
       <div class="header__buttons_normal">
         <div class="header__link-wrapper_normal header__link-wrapper_selected-white header__link-wrapper_visible">
-          <a href="./" target="_blank" class="header__link header__link_text-white">Главная</a>
+          <a href="./" class="header__link header__link_text-white">Главная</a>
         </div>
         <div class="header__link-wrapper_normal header__link-wrapper_visible">
-          <a href="./savednews" target="_blank"  class="header__link header__link_text-gray">Сохраненные статьи</a>
+          <a href="./savednews" class="header__link header__link_text-gray">Сохраненные статьи</a>
         </div>
-        <a href="#sign-in" class="header__button header__button_normal header__button_text-white header__button_border-white header__button_visible">Авторизоваться</a>
+        <button class="header__button header__button_normal header__button_text-white header__button_border-white header__button_visible">Авторизоваться</button>
         <div class="header__button header__button_normal header__button_text-white header__button_border-white header__button_hidden">
           Святослав
           <div class="header__button-icon header__button-icon_white"></div>
         </div>
       </div>
-      <div class="header__popup" id="menu">
+      <div class="header__popup header__popup_hidden">
         <h1 class="header__title header__title_white">NewsExplorer</h1>
-        <a href="#" class="header__menu header__menu_popup"></a>
+        <button class="header__menu header__menu_popup header__menu_visible"></button>
         <div class="header__buttons_popup">
           <div class="header__link-wrapper_popup header__link-wrapper_visible">
-            <a href="./" target="_blank" class="header__link header__link_text-white">Главная</a>
+            <a href="./" class="header__link header__link_text-white">Главная</a>
           </div>
           <div class="header__link-wrapper_popup header__link-wrapper_visible">
-            <a href="./savednews" target="_blank"  class="header__link header__link_text-white">Сохраненные статьи</a>
+            <a href="./savednews" class="header__link header__link_text-white">Сохраненные статьи</a>
           </div>
-          <a href="#sign-in" class="header__button header__button_popup header__button_text-white header__button_border-white header__button_visible">Авторизоваться</a>
+          <button class="header__button header__button_popup header__button_text-white header__button_border-white header__button_visible">Авторизоваться</button>
           <div class="header__button header__button_popup header__button_text-white header__button_border-white header__button_hidden">
             Святослав
             <div class="header__button-icon header__button-icon_white"></div>
@@ -65,7 +65,7 @@
         <p class="results__status">Идет поиск новостей...</p>
       </div>
       <div class="results__not-found results__not-found_hidden">
-        <img src=".././images/not-found-icon.svg" alt="Not found icon" class="results__not-found-icon">
+        <img src="./images/not-found-icon.svg" alt="Not found icon" class="results__not-found-icon">
         <h3 class="results__not-found-title">Ничего не найдено</h3>
         <p class="results__not-found-text">К сожалению по вашему запросу ничего не найдено.</p>
       </div>
@@ -73,7 +73,7 @@
         <h2 class="results__title">Результаты поиска</h2>
         <div class="article-grid">
           <div class="article">
-            <img src=".././images/card-1.jpg" alt="card-1" class="article__image">
+            <img src="./images/card-1.jpg" alt="card-1" class="article__image">
             <button class="article__icon article__icon_save-normal"></button>
             <button class="article__icon-helper">Войдите, чтобы сохранять статьи</button>
             <div class="article__text-content">
@@ -85,7 +85,7 @@
             </div>
           </div>
           <div class="article">
-            <img src=".././images/card-2.jpg" alt="card-2" class="article__image">
+            <img src="./images/card-2.jpg" alt="card-2" class="article__image">
             <button class="article__icon article__icon_save-normal"></button>
             <button class="article__icon-helper article__icon-helper_visible">Войдите, чтобы сохранять статьи</button>
             <div class="article__text-content">
@@ -97,7 +97,7 @@
             </div>
           </div>
           <div class="article">
-            <img src=".././images/card-3.jpg" alt="card-3" class="article__image">
+            <img src="./images/card-3.jpg" alt="card-3" class="article__image">
             <button class="article__icon article__icon_save-marked"></button>
             <button class="article__icon-helper article__icon-helper_hidden">Войдите, чтобы сохранять статьи</button>
             <div class="article__text-content">
@@ -114,9 +114,9 @@
     </section>
     <section class="author">
       <picture class="author__picture">
-        <source media="(max-width: 768px)" srcset=".././images/profile-pic_medium.png">
-        <source media="(max-width: 320px)" srcset=".././images/profile-pic_small.png">
-        <img class="author__profile-pic" src=".././images/profile-pic_large.jpg" alt="Profile picture">
+        <source media="(max-width: 768px)" srcset="./images/profile-pic_medium.png">
+        <source media="(max-width: 320px)" srcset="./images/profile-pic_small.png">
+        <img class="author__profile-pic" src="./images/profile-pic_large.jpg" alt="Profile picture">
       </picture>
       <div class="author__info">
         <h2 class="author__title">Об авторе</h2>
@@ -125,43 +125,46 @@
           научились, и чем можете помочь потенциальным заказчикам.</p>
       </div>
     </section>
-    <div class="popup js-popup-sign-in" id="sign-in">
+    <div class="popup popup_hidden js-popup-sign-in">
       <div class="popup__content">
-        <a href="#" class="popup__close-link">
-          <img src=".././images/close-menu-icon_white.svg" alt="" class="popup__close js-close-sign-in">
-        </a>
+        <img src="./images/close-menu-icon_white.svg" alt="" class="popup__close js-close-sign-in">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="sign-in">
           <p class="popup__field-name">Email</p>
-          <input required type="email" name="email" class="popup__input popup__input_type_email" placeholder="Введите почту">
-          <p class="popup__error-message" data-for-element="email">Empty</p>
+          <input required type="email" name="email" class="popup__input popup__input_email" placeholder="Введите почту">
+          <p class="popup__error-message popup__error-message_email" data-for-element="email">Неправильный формат email</p>
           <p class="popup__field-name">Пароль</p>
-          <input required type="password" name="password" class="popup__input popup__input_type_password" placeholder="Введите пароль">
-          <p class="popup__error-message" data-for-element="password"></p>
+          <input required type="password" name="password" class="popup__input popup__input_password" placeholder="Введите пароль">
           <button type="submit" class="button popup__button popup__button_enabled popup__button_sign-in js-submit-sign-in">Войти</button>
-          <p class="popup__text">или <a href="#sign-up" class="popup__link">Зарегистрироваться</a></p>
+          <p class="popup__text">или <span class="popup__link">Зарегистрироваться</span></p>
         </form>
       </div>
     </div>
-    <div class="popup js-popup-sign-up" id="sign-up">
+    <div class="popup popup_hidden js-popup-sign-up">
       <div class="popup__content js-popup-content-sign-up">
-        <a href="#" class="popup__close-link">
-          <img src=".././images/close-menu-icon_white.svg" alt="" class="popup__close js-close-sign-up">
-        </a>
+        <img src="./images/close-menu-icon_white.svg" alt="" class="popup__close js-close-sign-up">
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="sign-up">
           <p class="popup__field-name">Email</p>
-          <input required type="email" name="email" class="popup__input popup__input_type_email" placeholder="Введите почту">
-          <p class="popup__error-message" data-for-element="email">Empty</p>
+          <input required type="email" name="email" class="popup__input popup__input_email" placeholder="Введите почту">
+          <p class="popup__error-message popup__error-message_email" data-for-element="email">Неправильный формат email</p>
           <p class="popup__field-name">Пароль</p>
-          <input required type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="popup__input popup__input_type_password" placeholder="Введите пароль">
-          <p class="popup__error-message" data-for-element="password"></p>
+          <input required type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="popup__input popup__input_password" placeholder="Введите пароль">
+          <p class="popup__error-message popup__error-message_password" data-for-element="password">Неккоректный пароль</p>
           <p class="popup__field-name">Имя</p>
-          <input required type="text" name="name" minlength="2" maxlength="30" class="popup__input popup__input_type_name" placeholder="Введите свое имя">
-          <p class="popup__error-message" data-for-element="name"></p>
+          <input required type="text" name="name" minlength="2" maxlength="30" class="popup__input popup__input_name" placeholder="Введите свое имя">
+          <p class="popup__error-message popup__error-message_name" data-for-element="name">Неккорректное имя</p>
+          <p class="popup__error-message popup__error-message_user" data-for-element="name">Такой пользователь уже есть</p>
           <button type="submit" class="button popup__button popup__button_enabled js-submit-sign-up">Зарегистрироваться</button>
-          <p class="popup__text">или <a href="#sign-in" class="popup__link">Войти</a></p>
+          <p class="popup__text">или <span class="popup__link">Войти</span></p>
         </form>
+      </div>
+    </div>
+    <div class="popup popup_hidden js-popup-success">
+      <div class="popup__content popup__content_success js-popup-content-success">
+        <img src="./images/close-menu-icon_white.svg" alt="" class="popup__close js-close-success">
+        <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+        <p class="popup__link popup__link_large">Выполнить вход</p>
       </div>
     </div>
     <footer class="footer">
@@ -173,10 +176,10 @@
         </div>
         <div class="footer__logo-links">
           <a class="footer__link footer__link_logo" href="https://facebook.com/beatcase">
-            <img class="footer__img" src=".././images/facebook-icon.svg" alt="facebook icon">
+            <img class="footer__img" src="./images/facebook-icon.svg" alt="facebook icon">
           </a>
           <a class="footer__link footer__link_logo" href="https://github.com/jellythefish">
-            <img class="footer__img" src=".././images/github-icon.svg" alt="github icon">
+            <img class="footer__img" src="./images/github-icon.svg" alt="github icon">
           </a>
         </div>
       </div>
