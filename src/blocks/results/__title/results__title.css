@@ -37,7 +37,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 380px) {
   .results__title {
     width: 288px;
   }

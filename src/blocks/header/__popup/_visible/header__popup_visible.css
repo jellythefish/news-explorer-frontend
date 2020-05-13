@@ -1,0 +1,9 @@
+.header__popup_visible {
+  display: none;
+}
+
+@media screen and (max-width: 620px) {
+  .header__popup_visible {
+    display: flex;
+  }
+}

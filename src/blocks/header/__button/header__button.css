@@ -8,6 +8,7 @@
 @import url('./_normal/header__button_normal.css');
 @import url('./_popup/header__button_popup.css');
 @import url('./_visible/header__button_visible.css');
+@import url('./_border-gray/header__button_border-gray.css');
 
 .header__button {
   box-sizing: border-box;

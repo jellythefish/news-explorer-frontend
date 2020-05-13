@@ -1,4 +1,7 @@
+@import url('./_large/popup__link_large.css');
+
 .popup__link {
   color: #4e82de;
   text-decoration: none;
+  cursor: pointer;
 }

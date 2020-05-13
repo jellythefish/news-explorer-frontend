@@ -1,7 +1,9 @@
 .results__more {
   width: 288px;
   height: 64px;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto 80px;
   padding: 0;
   background-color: #fff;
@@ -19,7 +21,7 @@
 }
 
 .results__more:hover {
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 1440px) {

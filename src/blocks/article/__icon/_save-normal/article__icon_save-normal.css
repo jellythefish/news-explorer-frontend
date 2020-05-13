@@ -7,7 +7,7 @@
 }
 
 .article__icon_save-normal:hover + .article__icon-helper {
-  display: block;
+  display: flex;
 }
 
 

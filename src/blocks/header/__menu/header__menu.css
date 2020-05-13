@@ -1,6 +1,8 @@
 @import url('./_black/header__menu_black.css');
 @import url('./_white/header__menu_white.css');
 @import url('./_popup/header__menu_popup.css');
+@import url('./_hidden/header__menu_hidden.css');
+@import url('./_visible/header__menu_visible.css');
 
 .header__menu {
   position: absolute;
@@ -22,7 +24,7 @@
 
 @media screen and (max-width: 620px) {
   .header__menu {
-    display: block;
+    display: flex;
     right: 5.5161vw;
   }
 }

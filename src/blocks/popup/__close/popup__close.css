@@ -5,3 +5,19 @@
   right: -40px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 960px) {
+  .popup__close {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .popup__close {
+    display: flex;
+    width: 24px;
+    top: -40px;
+    right: 16px;
+  }
+}
+

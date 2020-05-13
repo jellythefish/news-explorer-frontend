@@ -1,5 +1,7 @@
+@import url('./_hidden/header__popup_hidden.css');
+@import url('./_visible/header__popup_visible.css');
+
 .header__popup {
-  display: none;
   align-items: center;
   width: 100%;
   position: absolute;
@@ -7,12 +9,7 @@
   left: 0;
   min-height: 80px;
   background-color: #1A1B22;
-  visibility: hidden;
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
-}
-
-.header__popup:target {
-  visibility: visible;
 }
 
 @media screen and (max-width: 1440px) {
@@ -29,9 +26,5 @@
   }
 }
 
-@media screen and (max-width: 620px) {
-  .header__popup {
-    display: flex;
-  }
-}
+
 
