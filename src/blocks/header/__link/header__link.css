@@ -4,10 +4,10 @@
 
 .header__link {
   cursor: pointer;
-  outline-style: none; /* TODO: to change */
   opacity: 1;
+  outline: blue;
   transition: opacity 0.4s linear 0s;
-  font-family: 'Roboto';
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
