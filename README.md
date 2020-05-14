@@ -85,66 +85,66 @@ https://jellythefish.github.io/news-explorer-frontend
 ###  <a name='test'></a>Тестирование верстки
 ####  <a name='popup'></a>Всплывающие окна
 Существует 4 вида всплывавающих окон в проекте, открытие-закрытие которых на данном этапе реализовано с помощью добавления модификаторов. Чтобы сейчас их открыть, нужно добавить модификаторы вручную в следующих местах (в дальнейшем это планируется все автоматизировать с помощью js):
-1. **Окно авторизации**:
-    `<div class="popup popup_hidden js-popup-sign-in">`
-    меняется на
-    `<div class="popup popup_is-opened js-popup-sign-in">`
-2. **Окно регистрации**:
-    `<div class="popup popup_hidden js-popup-sign-up">`
-    меняется на
-    `<div class="popup popup_is-opened js-popup-sign-up">`
-3. **Окно успешной регистрации**:
-    `<div class="popup popup_hidden js-popup-success">`
-    меняется на
-    `<div class="popup popup_is-opened js-popup-success">`
-4. **Меню на маленьких разрешениях экрана**:
-  Необходимо сжать размеры окна до размеров не более чем 620px, затем
+1. **Окно авторизации**:  
+    `<div class="popup popup_hidden js-popup-sign-in">`  
+    меняется на  
+    `<div class="popup popup_is-opened js-popup-sign-in">`  
+2. **Окно регистрации**:  
+    `<div class="popup popup_hidden js-popup-sign-up">`    
+    меняется на  
+    `<div class="popup popup_is-opened js-popup-sign-up">`  
+3. **Окно успешной регистрации**:  
+    `<div class="popup popup_hidden js-popup-success">`  
+    меняется на  
+    `<div class="popup popup_is-opened js-popup-success">`  
+4. **Меню на маленьких разрешениях экрана**:  
+  Необходимо сжать размеры окна до размеров не более чем 620px, затем  
  `<div class="header__popup header__popup_hidden">`  
-    меняется на
-    `<div class="header__popup header__popup_visible">`
+    меняется на  
+  `<div class="header__popup header__popup_visible">`  
 
 На странице "Сохранненые статьи" действия аналогичные.
 
 #### <a name='search'></a>Блоки поиска
-**Блок с карточками** можно скрыть:
-`<div class="results__container results__container_visible">`
-меняется на
-`<div class="results__container results__container_hidden">`
-Далее, можно отобразить различные варианты поиска, реализованные из макета.
-**Прелоудер:**
-`<div class="results__preloading results__preloading_hidden">`
-менятся на
-`<div class="results__preloading results__preloading_visible">`
-**Не найдено:**
-`<div class="results__not-found results__not-found_hidden">`
-меняется на
-`<div class="results__not-found results__not-found_visible">`
+**Блок с карточками** можно скрыть:  
+`<div class="results__container results__container_visible">`  
+меняется на  
+`<div class="results__container results__container_hidden">`  
+Далее, можно отобразить различные варианты поиска, реализованные из макета.  
+**Прелоудер:**  
+`<div class="results__preloading results__preloading_hidden">`  
+менятся на  
+`<div class="results__preloading results__preloading_visible">`  
+**Не найдено:**  
+`<div class="results__not-found results__not-found_hidden">`  
+меняется на  
+`<div class="results__not-found results__not-found_visible">`  
 
 ####  <a name='header'></a>Кнопки в шапке
-Различные состояния кнопок (цвет, подчеркивание, цвет иконки) реализованы с помощью модификаторов:
+Различные состояния кнопок (цвет, подчеркивание, цвет иконки) реализованы с помощью модификаторов:  
 `_selected-white`, `_text-white`, `_border-white`, `_border-black`, `_text-black`, `_text-gray`, `_border-black`,
-`_selected-black`.
-Модификаторы уже настроены на корректное отображение в зависимости от страницы.
-Различные состояния шапки можно регулировать с помощью модификаторов, которые отвечают за свойство display:
-1. **У ссылки**:
-`<div class="header__link-wrapper_normal header__link-wrapper_visible">`
-меняется на
-`<div class="header__link-wrapper_normal header__link-wrapper_hidden">`
-2. **У кнопки** (авторизация/или выйти из аккаунта):
-`<button class="header__button ... header__button_hidden">Авторизоваться</button>`
-меняется на
-`<button class="header__button ... header__button_visible">Авторизоваться</button>`
-ИЛИ
-`<div class="header__button ... header__button_hidden">`
-меняется на
-`<div class="header__button ... header__button_visible">`
-Во всплывающем меня header__popup (меню при маленьких разрешениях экрана) и на странице Сохраненные страницы действия аналогичные.
+`_selected-black`.  
+Модификаторы уже настроены на корректное отображение в зависимости от страницы.  
+Различные состояния шапки можно регулировать с помощью модификаторов, которые отвечают за свойство display:  
+1. **У ссылки**:  
+`<div class="header__link-wrapper_normal header__link-wrapper_visible">`  
+меняется на  
+`<div class="header__link-wrapper_normal header__link-wrapper_hidden">`  
+2. **У кнопки** (авторизация/или выйти из аккаунта):  
+`<button class="header__button ... header__button_hidden">Авторизоваться</button>`  
+меняется на  
+`<button class="header__button ... header__button_visible">Авторизоваться</button>`  
+ИЛИ  
+`<div class="header__button ... header__button_hidden">`  
+меняется на  
+`<div class="header__button ... header__button_visible">`  
+Во всплывающем меня header__popup (меню при маленьких разрешениях экрана) и на странице Сохраненные страницы действия аналогичные.  
 
 ####  <a name='button'></a>Кнопка в popup регистрации, логина:
-Ее стили можно менять с помощью замены
-`<button type="submit" class="button popup__button popup__button_enabled js-submit-sign-up">...</button>`
-на
-`<button type="submit" class="button popup__button popup__button_disabled js-submit-sign-up">...</button>`
+Ее стили можно менять с помощью замены  
+`<button type="submit" class="button popup__button popup__button_enabled js-submit-sign-up">...</button>`  
+на  
+`<button type="submit" class="button popup__button popup__button_disabled js-submit-sign-up">...</button>`  
 
 ###  <a name='comments'></a>Комментарии
 
