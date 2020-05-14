@@ -23,7 +23,7 @@
 }
 
 .search__button:active {
-  transition: background-color 0s linear 0s;
+  transition: background-color 0.2s linear 0s;
   background-color: #2A65CC;
 }
 

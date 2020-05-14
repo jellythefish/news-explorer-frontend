@@ -7,12 +7,12 @@
 }
 
 .article__icon_delete:hover + .article__icon-helper {
-  display: flex;
+  opacity: 1;
 }
 
 
 @media screen and (max-width: 1152px) {
   .article__icon_delete:hover + .article__icon-helper {
-    display: none;
+    opacity: 0;
   }
 }

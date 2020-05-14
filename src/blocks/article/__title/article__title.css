@@ -9,7 +9,11 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  overflow: hidden;
+  overflow: auto;
+}
+
+.article__title::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 1440px) {

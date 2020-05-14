@@ -11,6 +11,10 @@
   overflow: auto;
 }
 
+.article__text::-webkit-scrollbar {
+  display: none;
+}
+
 @media screen and (max-width: 1440px) {
   .article__text {
     margin: 1.1111vw 0 0 0;
