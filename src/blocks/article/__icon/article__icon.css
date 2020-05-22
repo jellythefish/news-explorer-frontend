@@ -12,8 +12,8 @@
   border: 0;
   padding: 0;
   cursor: pointer;
-  outline: none;
   transition: background-image .5s;
+  outline: none;
 }
 
 @media screen and (max-width: 1440px) {

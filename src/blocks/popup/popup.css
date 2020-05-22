@@ -10,6 +10,7 @@
 @import url('./__text/popup__text.css');
 @import url('./_is-opened/popup_is-opened.css');
 @import url('./_hidden/popup_hidden.css');
+@import url('./_visible/popup_visible.css');
 
 .popup {
   position: fixed;

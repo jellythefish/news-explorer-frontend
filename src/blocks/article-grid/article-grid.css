@@ -1,7 +1,9 @@
 .article-grid {
   margin: 64px auto 64px;
+  padding: 0;
   display: grid;
   justify-content: center;
+  list-style-type: none;
   grid-template-columns: repeat(3, 400px);
   grid-column-gap: 16px;
   grid-row-gap: 16px;

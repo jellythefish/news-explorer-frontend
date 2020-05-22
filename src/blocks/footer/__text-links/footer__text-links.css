@@ -1,6 +1,11 @@
+.footer__text-links {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
 @media screen and (max-width: 410px) {
   .footer__text-links {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }

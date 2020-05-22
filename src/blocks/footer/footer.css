@@ -3,6 +3,7 @@
 @import url('./__links/footer__links.css');
 @import url('./__text-links/footer__text-links.css');
 @import url('./__logo-links/footer__logo-links.css');
+@import url('./__link-item/footer__link-item.css');
 
 .footer {
   position: relative;

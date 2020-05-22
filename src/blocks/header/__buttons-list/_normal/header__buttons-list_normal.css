@@ -1,0 +1,6 @@
+.header__buttons-list_normal {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
