@@ -1,0 +1,4 @@
+.results__not-found_visible {
+  display: flex;
+  flex-direction: column;
+}

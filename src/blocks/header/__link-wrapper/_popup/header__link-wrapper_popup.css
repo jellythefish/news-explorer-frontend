@@ -1,0 +1,7 @@
+.header__link-wrapper_popup {
+  margin: 32px 0 0 0;
+}
+
+.header__link-wrapper_popup:first-of-type {
+  margin: 0;
+}

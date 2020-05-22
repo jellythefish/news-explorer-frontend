@@ -1,0 +1,11 @@
+.popup__error-message_name {
+  top: 312px;
+  left: 36px;
+}
+
+@media screen and (max-width: 410px) {
+  .popup__error-message_name {
+    top: 296px;
+    left: 16px;
+  }
+}

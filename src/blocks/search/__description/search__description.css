@@ -1,0 +1,25 @@
+.search__description {
+  width: 608px;
+  margin: 32px auto 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 1440px) {
+  .search__description {
+    width: 42.2222vw;
+    min-width: 448px;
+    margin: 2.2222vw auto 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search__description {
+    margin: 16px auto 0;
+    width: 58.3333vw;
+    min-width: 288px;
+  }
+}

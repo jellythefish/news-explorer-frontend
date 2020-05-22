@@ -1,0 +1,34 @@
+@import url('./__button/search__button.css');
+@import url('./__description/search__description.css');
+@import url('./__field/search__field.css');
+@import url('./__input/search__input.css');
+@import url('./__title/search__title.css');
+
+.search {
+  min-height: 496px;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .search {
+    height: 34.4444vw;
+    min-height: 334px;
+    padding-top: 5.5555vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    padding-top: 4.9479vw;
+    height: calc(334px + (768px - 100vw));
+    max-height: 480px;
+  }
+}
+
+@media screen and (max-width: 605px) {
+  .search {
+    padding-top: 30px;
+  }
+}

@@ -1,0 +1,10 @@
+@import url('./_black/header__button-icon_black.css');
+@import url('./_white/header__button-icon_white.css');
+
+.header__button-icon {
+  margin: 0 0 0 3px;
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}

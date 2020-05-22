@@ -1,0 +1,28 @@
+.results__status {
+  margin: 0 auto 80px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #B6BCBF;
+}
+
+@media screen and (max-width: 1440px) {
+  .results__status {
+    margin: 0 auto 5.5555vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .results__status {
+    margin: 0 auto 5.2083vw;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .results__status {
+    margin: 0 auto 32px;
+  }
+}

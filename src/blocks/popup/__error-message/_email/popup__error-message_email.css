@@ -1,0 +1,11 @@
+.popup__error-message_email {
+  top: 142px;
+  left: 36px;
+}
+
+@media screen and (max-width: 410px) {
+  .popup__error-message_email {
+    top: 125px;
+    left: 16px;
+  }
+}

@@ -1,0 +1,8 @@
+.header__button-item {
+  list-style-type: none;
+}
+
+.header__button-item:focus {
+  outline: none;
+  box-shadow: 0 0px 16px #0005;
+}

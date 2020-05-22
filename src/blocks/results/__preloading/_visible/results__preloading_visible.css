@@ -1,0 +1,4 @@
+.results__preloading_visible {
+  display: flex;
+  flex-direction: column;
+}

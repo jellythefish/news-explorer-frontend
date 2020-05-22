@@ -1,0 +1,12 @@
+@import url('./_large/popup__link_large.css');
+
+.popup__link {
+  color: #4e82de;
+  transition: color .4s linear 0s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup__link:hover {
+  color: #5d97fa;
+}

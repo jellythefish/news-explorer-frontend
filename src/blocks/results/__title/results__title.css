@@ -1,0 +1,45 @@
+.results__title {
+  margin: 80px 0 0 104px;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+
+}
+
+@media screen and (max-width: 1440px) {
+  .results__title {
+    margin: 5.5555vw 0 0 7.2222vw;
+    font-size: 2.7777vw;
+    line-height: 3.1944vw;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .results__title {
+    margin: 5.5555vw 0 0 7.2222vw;
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .results__title {
+    margin: 5.2083vw 0 0 5.2083vw;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .results__title {
+    margin: 32px 0 0 5.2083vw;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .results__title {
+    width: 288px;
+  }
+}
+

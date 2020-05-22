@@ -1,0 +1,9 @@
+.footer__link_logo {
+  width: 24px;
+  height: 24px;
+  margin: 0 0 0 20px;
+}
+
+.footer__link_logo:first-of-type {
+  margin: 0;
+}

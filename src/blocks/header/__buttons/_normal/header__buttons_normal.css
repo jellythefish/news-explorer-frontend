@@ -1,0 +1,25 @@
+.header__buttons_normal {
+  height: 100%;
+  position: absolute;
+  right: 104px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1440px) {
+  .header__buttons_normal {
+    right: 7.2222vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__buttons_normal {
+    right: 5.2083vw;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .header__buttons_normal {
+    display: none;
+  }
+}

@@ -1,0 +1,22 @@
+.author__text {
+  width: 100%;
+  margin: 24px 0 0 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+}
+
+@media screen and (max-width: 1440px) {
+  .author__text {
+    margin: 1.6666vw 0 0 0;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .author__text {
+    margin: 16px 0 0 0;
+  }
+}

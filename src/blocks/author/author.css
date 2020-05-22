@@ -1,0 +1,36 @@
+@import url('./__info/author__info.css');
+@import url('./__profile-pic/author__profile-pic.css');
+@import url('./__text/author__text.css');
+@import url('./__title/author__title.css');
+@import url('./__picture/author__picture.css');
+
+.author {
+  display: flex;
+  padding: 0 0 80px 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .author {
+    padding: 0 0 5.5555vw 0;
+  }
+}
+
+@media screen and (max-width: 1098px) {
+  .author {
+    padding: 0 0 61px 0;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .author {
+    padding: 0 0 calc(61px + (680px - 100vw)) 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .author {
+    padding: 0 0 80px 0;
+  }
+}

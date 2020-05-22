@@ -1,0 +1,20 @@
+.article__icon_save-normal {
+  background-image: url('../../../../images/bookmark_normal.svg');
+}
+
+.article__icon_save-normal:hover {
+  background-image: url('../../../../images/bookmark_hover.svg');
+}
+
+.article__icon_save-normal:hover + .article__icon-helper {
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 1152px) {
+  .article__icon_save-normal:hover + .article__icon-helper {
+    opacity: 0;
+  }
+}
+
+

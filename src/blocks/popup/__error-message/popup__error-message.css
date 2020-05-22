@@ -1,0 +1,15 @@
+@import url('./_email/popup__error-message_email.css');
+@import url('./_password/popup__error-message_password.css');
+@import url('./_name/popup__error-message_name.css');
+@import url('./_user/popup__error-message_user.css');
+
+.popup__error-message {
+  margin: 0;
+  position: absolute;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+}

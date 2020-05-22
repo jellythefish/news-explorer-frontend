@@ -1,0 +1,39 @@
+@import url('./_save-marked/article__icon_save-marked.css');
+@import url('./_save-normal/article__icon_save-normal.css');
+@import url('./_delete/article__icon_delete.css');
+
+.article__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background-image .5s;
+  outline: none;
+}
+
+@media screen and (max-width: 1440px) {
+  .article__icon {
+    right: 1.6666vw;
+    top: 1.6666vw;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .article__icon {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 732px) {
+  .article__icon {
+    top: 16px;
+    right: 16px;
+  }
+}

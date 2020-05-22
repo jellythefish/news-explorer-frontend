@@ -1,0 +1,27 @@
+.saved-news__stats {
+  padding: 40px 0 56px 104px;
+}
+
+@media screen and (max-width: 1440px) {
+  .saved-news__stats {
+    padding: 2.7777vw 0 3.8888vw 7.2222vw
+  }
+}
+
+@media screen and (max-width: 864px) {
+  .saved-news__stats {
+    padding: 24px 0 32px 7.2222vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .saved-news__stats {
+    padding: 3.125vw 0 32px 5.2083vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .saved-news__stats {
+    padding: 8px 0 32px 16px;
+  }
+}

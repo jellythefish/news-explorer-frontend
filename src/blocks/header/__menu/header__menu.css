@@ -1,0 +1,36 @@
+@import url('./_black/header__menu_black.css');
+@import url('./_white/header__menu_white.css');
+@import url('./_popup/header__menu_popup.css');
+@import url('./_hidden/header__menu_hidden.css');
+@import url('./_visible/header__menu_visible.css');
+
+.header__menu {
+  position: absolute;
+  right: 32px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  opacity: 1;
+  transition: opacity 0.4s linear 0s;
+}
+
+.header__menu:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 620px) {
+  .header__menu {
+    display: flex;
+    right: 5.5161vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__menu {
+    right: 16px;
+  }
+}

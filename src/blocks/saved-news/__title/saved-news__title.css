@@ -1,0 +1,33 @@
+.saved-news__title {
+  margin: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
+}
+
+@media screen and (max-width: 1440px) {
+  .saved-news__title {
+    font-size: 1.25vw;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .saved-news__title {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .saved-news__title {
+    font-size: 1.8229vw;
+  }
+}
+
+@media screen and (max-width: 658px) {
+  .saved-news__title {
+    font-size: 12px;
+  }
+}

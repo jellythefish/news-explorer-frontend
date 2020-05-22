@@ -1,0 +1,30 @@
+@import url('./_black/header__title_black.css');
+@import url('./_white/header__title_white.css');
+
+.header__title {
+  margin: 0 0 0 104px;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1440px) {
+  .header__title {
+    margin: 0 0 0 7.2222vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__title {
+    margin: 0 0 0 5.2083vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__title {
+    margin: 0 0 0 16px;
+  }
+}
+

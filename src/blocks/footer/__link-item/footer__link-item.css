@@ -1,0 +1,6 @@
+@import url('./_text/footer__link-item_text.css');
+@import url('./_logo/footer__link-item_logo.css');
+
+.footer__link-item {
+  list-style-type: none;
+}
