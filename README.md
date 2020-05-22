@@ -41,9 +41,6 @@ https://jellythefish.github.io/news-explorer-frontend
 
    ```bash
    cd news-explorer-frontend
-   
-   # для этапа разработки нужно перейти в ветку level-2 коммандой
-   git checkout level-2
    ```
 
 2. Установите требуемые зависимости с помощью команды:
