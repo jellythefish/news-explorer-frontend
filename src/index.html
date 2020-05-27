@@ -28,10 +28,10 @@
           <li class="header__button-item header__link-wrapper_normal header__link-wrapper_visible">
             <a href="./savednews" class="header__link header__link_text-gray">Сохраненные статьи</a>
           </li>
-          <li class="header__button-item">
+          <li class="header__button-item js-button-auth">
             <button class="header__button header__button_normal header__button_text-white header__button_border-white header__button_visible">Авторизоваться</button>
           </li>
-          <li class="header__button-item header__button header__button_normal header__button_text-white header__button_border-white header__button_hidden">
+          <li class="header__button-item header__button header__button_normal header__button_text-white header__button_border-white header__button_hidden js-button-logout">
             Святослав
             <div class="header__button-icon header__button-icon_white"></div>
           </li>
@@ -144,7 +144,7 @@
           <p class="popup__field-name">Пароль</p>
           <input required type="password" name="password" class="popup__input popup__input_password" placeholder="Введите пароль">
           <button type="submit" class="button popup__button popup__button_enabled popup__button_sign-in js-submit-sign-in">Войти</button>
-          <p class="popup__text">или <span class="popup__link">Зарегистрироваться</span></p>
+          <p class="popup__text">или <span class="popup__link js-popup-link-sign-in">Зарегистрироваться</span></p>
         </form>
       </div>
     </section>
@@ -164,7 +164,7 @@
           <p class="popup__error-message popup__error-message_name" data-for-element="name">Неккорректное имя</p>
           <p class="popup__error-message popup__error-message_user" data-for-element="name">Такой пользователь уже есть</p>
           <button type="submit" class="button popup__button popup__button_enabled js-submit-sign-up">Зарегистрироваться</button>
-          <p class="popup__text">или <span class="popup__link">Войти</span></p>
+          <p class="popup__text">или <span class="popup__link js-popup-link-sign-up">Войти</span></p>
         </form>
       </div>
     </section>
@@ -172,7 +172,7 @@
       <div class="popup__content popup__content_success js-popup-content-success">
         <img src="<%= require('./images/close-menu-icon_white.svg').default %>" alt="Close icon" class="popup__close js-close-success">
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-        <p class="popup__link popup__link_large">Выполнить вход</p>
+        <p class="popup__link popup__link_large js-popup-link-success">Выполнить вход</p>
       </div>
     </section>
     <footer class="footer">
