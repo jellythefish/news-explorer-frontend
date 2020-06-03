@@ -1,0 +1,18 @@
+.popup__error-message_creds {
+  top: 245px;
+  left: 120px;
+}
+
+@media screen and (max-width: 410px) {
+  .popup__error-message_creds {
+    top: 230px;
+    left: calc((100vw - 174.88px) / 2 - 10px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__error-message_creds {
+    top: 230px;
+    left: 62px;
+  }
+}

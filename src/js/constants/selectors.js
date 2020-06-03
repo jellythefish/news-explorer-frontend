@@ -2,7 +2,13 @@
 
 export default {
   AUTH_BUTTON: document.querySelector('.js-button-auth'),
+  SAVEDNEWS_LINK: document.querySelector('.js-savednews-link'),
   LOGOUT_BUTTON: document.querySelector('.js-button-logout'),
+  OPEN_BUTTON_MENU: document.querySelector('.js-button-menu-open'),
+  CLOSE_BUTTON_MENU: document.querySelector('.js-button-menu-close'),
+  AUTH_BUTTON_MENU: document.querySelector('.js-button-menu-auth'),
+  LOGOUT_BUTTON_MENU: document.querySelector('.js-button-menu-logout'),
+  MENU_POPUP: document.querySelector('.js-popup-menu'),
   SIGNIN_POPUP: document.querySelector('.js-popup-sign-in'),
   SIGNUP_POPUP: document.querySelector('.js-popup-sign-up'),
   SUCCESS_POPUP: document.querySelector('.js-popup-success'),
@@ -12,4 +18,10 @@ export default {
   SIGNUP_POPUP_LINK: document.querySelector('.js-popup-link-sign-up'),
   SIGNIN_POPUP_LINK: document.querySelector('.js-popup-link-sign-in'),
   SUCCESS_POPUP_LINK: document.querySelector('.js-popup-link-success'),
+  SIGNIN_FORM: document.forms['sign-in'],
+  SIGNUP_FORM: document.forms['sign-up'],
+  SIGNUP_SUBMIT_BUTTON: document.querySelector('.js-submit-sign-up'),
+  SIGNIN_SUBMIT_BUTTON: document.querySelector('.js-submit-sign-in'),
+  SIGNUP_ERRORS: document.querySelectorAll('.js-sign-up-error'),
+  SIGNIN_ERRORS: document.querySelectorAll('.js-sign-in-error'),
 };

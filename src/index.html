@@ -19,13 +19,13 @@
         <img class="header__background" src="<%= require('./images/background_large.jpg').default %>" alt="Background image">
       </picture>
       <h1 class="header__title header__title_white">NewsExplorer</h1>
-      <button class="header__menu header__menu_white"></button>
+      <button class="header__menu header__menu_white header__menu_visible js-button-menu-open"></button>
       <nav class="header__buttons_normal">
         <ul class="header__buttons-list_normal">
           <li class="header__button-item header__link-wrapper_normal header__link-wrapper_selected-white header__link-wrapper_visible">
             <a href="./" class="header__link header__link_text-white">Главная</a>
           </li>
-          <li class="header__button-item header__link-wrapper_normal header__link-wrapper_visible">
+          <li class="header__button-item header__link-wrapper_normal header__link-wrapper_hidden js-savednews-link">
             <a href="./savednews" class="header__link header__link_text-gray">Сохраненные статьи</a>
           </li>
           <li class="header__button-item js-button-auth">
@@ -37,21 +37,21 @@
           </li>
         </ul>
       </nav>
-      <div class="header__popup header__popup_hidden">
+      <div class="header__popup header__popup_hidden js-popup-menu">
         <h1 class="header__title header__title_white">NewsExplorer</h1>
-        <button class="header__menu header__menu_popup header__menu_visible"></button>
+        <button class="header__menu header__menu_popup header__menu_visible js-button-menu-close"></button>
         <nav class="header__buttons_popup">
           <ul class="header__buttons-list_popup">
             <li class="header__button-item header__link-wrapper_popup header__link-wrapper_visible">
               <a href="./" class="header__link header__link_text-white">Главная</a>
             </li>
-            <li class="header__button-item header__link-wrapper_popup header__link-wrapper_visible">
+            <li class="header__button-item header__link-wrapper_popup header__link-wrapper_hidden">
               <a href="./savednews" class="header__link header__link_text-white">Сохраненные статьи</a>
             </li>
-            <li class="header__button-item">
-              <button class="header__button header__button_popup header__button_text-white header__button_border-white header__button_visible">Авторизоваться</button>
+            <li class="header__button-item js-button-menu-auth">
+              <button class="header__button header__button_popup header__button_text-white header__button_border-white header__button_visible js-button-menu-auth">Авторизоваться</button>
             </li>
-            <li class="header__button-item header__button header__button_popup header__button_text-white header__button_border-white header__button_hidden">
+            <li class="header__button-item header__button header__button_popup header__button_text-white header__button_border-white header__button_hidden js-button-menu-logout">
               Святослав
               <div class="header__button-icon header__button-icon_white"></div>
             </li>
@@ -140,10 +140,12 @@
         <form class="popup__form" name="sign-in">
           <p class="popup__field-name">Email</p>
           <input required type="email" name="email" class="popup__input popup__input_email" placeholder="Введите почту">
-          <p class="popup__error-message popup__error-message_email" data-for-element="email">Неправильный формат email</p>
+          <p class="popup__error-message popup__error-message_email js-sign-in-error" data-for-element="email"></p>
           <p class="popup__field-name">Пароль</p>
           <input required type="password" name="password" class="popup__input popup__input_password" placeholder="Введите пароль">
-          <button type="submit" class="button popup__button popup__button_enabled popup__button_sign-in js-submit-sign-in">Войти</button>
+          <p class="popup__error-message popup__error-message_password js-sign-in-error" data-for-element="password"></p>
+          <p class="popup__error-message popup__error-message_creds js-sign-in-error" data-for-element="common"></p>
+          <button type="submit" class="button popup__button popup__button_disabled popup__button_sign-in js-submit-sign-in" disabled>Войти</button>
           <p class="popup__text">или <span class="popup__link js-popup-link-sign-in">Зарегистрироваться</span></p>
         </form>
       </div>
@@ -155,15 +157,15 @@
         <form class="popup__form" name="sign-up">
           <p class="popup__field-name">Email</p>
           <input required type="email" name="email" class="popup__input popup__input_email" placeholder="Введите почту">
-          <p class="popup__error-message popup__error-message_email" data-for-element="email">Неправильный формат email</p>
+          <p class="popup__error-message popup__error-message_email js-sign-up-error" data-for-element="email"></p>
           <p class="popup__field-name">Пароль</p>
           <input required type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="popup__input popup__input_password" placeholder="Введите пароль">
-          <p class="popup__error-message popup__error-message_password" data-for-element="password">Неккоректный пароль</p>
+          <p class="popup__error-message popup__error-message_password js-sign-up-error" data-for-element="password"></p>
           <p class="popup__field-name">Имя</p>
-          <input required type="text" name="name" minlength="2" maxlength="30" class="popup__input popup__input_name" placeholder="Введите свое имя">
-          <p class="popup__error-message popup__error-message_name" data-for-element="name">Неккорректное имя</p>
-          <p class="popup__error-message popup__error-message_user" data-for-element="name">Такой пользователь уже есть</p>
-          <button type="submit" class="button popup__button popup__button_enabled js-submit-sign-up">Зарегистрироваться</button>
+          <input required type="text" name="username" minlength="2" maxlength="30" class="popup__input popup__input_name" placeholder="Введите свое имя">
+          <p class="popup__error-message popup__error-message_name js-sign-up-error" data-for-element="username"></p>
+          <p class="popup__error-message popup__error-message_user js-sign-up-error" data-for-element="common"></p>
+          <button type="submit" class="button popup__button popup__button_disabled js-submit-sign-up" disabled>Зарегистрироваться</button>
           <p class="popup__text">или <span class="popup__link js-popup-link-sign-up">Войти</span></p>
         </form>
       </div>

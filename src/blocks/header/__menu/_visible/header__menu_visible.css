@@ -1,3 +1,12 @@
 .header__menu_visible {
-  display: flex;
+  display: none;
 }
+
+@media screen and (max-width: 620px) {
+  .header__menu_visible {
+    display: flex;
+    right: 5.5161vw;
+  }
+}
+
+

@@ -2,6 +2,7 @@
   background-color: #2F71E5;
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 .popup__button_enabled:hover {

@@ -14,7 +14,7 @@
   <div class="page">
     <header class="header header_white">
       <h1 class="header__title header__title_black">NewsExplorer</h1>
-      <button class="header__menu header__menu_black"></button>
+      <button class="header__menu header__menu_black header__menu_visible js-button-menu-open"></button>
       <nav class="header__buttons_normal">
         <ul class="header__buttons-list_normal">
           <li class="header__button-item header__link-wrapper_normal header__link-wrapper_visible">
@@ -23,19 +23,16 @@
           <li class="header__button-item header__link-wrapper_normal header__link-wrapper_selected-black header__link-wrapper_visible">
             <a href="./" class="header__link header__link_text-black">Сохраненные статьи</a>
           </li>
-          <li class="header__button-item">
-            <button class="header__button header__button header__button_normal header__button_text-black header__button_border-gray header__button_visible">Авторизоваться</button>
-          </li>
-          <li class="header__button-item header__button header__button_normal header__button_text-black header__button_border-gray header__button_hidden">
+          <li class="header__button-item header__button header__button_normal header__button_text-black header__button_border-gray header__button_visible">
             Святослав
             <div class="header__button-icon header__button-icon_black"></div>
           </li>
         </ul>
       </nav>
 
-      <div class="header__popup header__popup_hidden">
+      <div class="header__popup header__popup_hidden js-popup-menu">
         <h1 class="header__title header__title_white">NewsExplorer</h1>
-        <button class="header__menu header__menu_popup header__menu_visible"></button>
+        <button class="header__menu header__menu_popup header__menu_visible js-button-menu-close"></button>
         <nav class="header__buttons_popup">
           <ul class="header__buttons-list_popup">
             <li class="header__button-item header__link-wrapper_popup header__link-wrapper_visible">
@@ -44,10 +41,7 @@
             <li class="header__button-item header__link-wrapper_popup header__link-wrapper_visible">
               <a href="./" class="header__link header__link_text-white">Сохраненные статьи</a>
             </li>
-            <li class="header__button-item">
-              <button class="header__button header__button_popup header__button_text-white header__button_border-white header__button_visible">Авторизоваться</button>
-            </li>
-            <li class="header__button-item header__button header__button_popup header__button_text-white header__button_border-white header__button_hidden">
+            <li class="header__button-item header__button header__button_popup header__button_text-white header__button_border-white header__button_visible">
               Святослав
               <div class="header__button-icon header__button-icon_white"></div>
             </li>

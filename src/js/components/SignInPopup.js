@@ -1,8 +1,8 @@
 import Popup from './Popup';
 
 export default class SignInPopup extends Popup {
-  constructor(element, openButton, closeButton, signUpLink) {
-    super(element, openButton, closeButton);
+  constructor(element, openButtons, closeButton, signUpLink) {
+    super(element, openButtons, closeButton);
     this._signUpPopup = null;
     this._signUpLink = signUpLink;
   }
