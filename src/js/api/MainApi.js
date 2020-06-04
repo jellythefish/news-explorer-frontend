@@ -9,7 +9,6 @@ export default class MainApi {
       headers: {
         'Content-Type': 'application/json',
       },
-      credentials: 'include',
       body: JSON.stringify({ name, email, password }),
     })
       .then((res) => {
@@ -27,7 +26,6 @@ export default class MainApi {
       headers: {
         'Content-Type': 'application/json',
       },
-      credentials: 'include',
       body: JSON.stringify({ email, password }),
     })
       .then((res) => {
