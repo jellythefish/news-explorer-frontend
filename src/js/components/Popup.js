@@ -27,7 +27,7 @@ export default class Popup {
 
   _backgroundCloseClick(event) {
     if (event.target.classList.contains('popup')) this.close(event);
-    else if (!(event.target.classList.contains('header__popup') || event.target.classList.contains('header__menu'))
+    else if (!(event.target.closest('div').classList.contains('header__popup') || event.target.classList.contains('header__menu'))
     && this._element.classList.contains('header__popup_visible')) this.close(event);
   }
 
@@ -42,7 +42,7 @@ export default class Popup {
       event.target.closest('div').classList.remove('header__popup_visible');
       SELECTORS.OPEN_BUTTON_MENU.classList.add('header__menu_hidden');
       SELECTORS.OPEN_BUTTON_MENU.classList.remove('header__menu_visible');
-    } else if (classList.contains('popup') || classList.contains('popup__close') || event.key === 'Escape') {
+    } else if (classList.contains('popup') || classList.contains('popup__close') || event.key === 'Escape' || event.target.name === 'sign-in') {
       SELECTORS.OPEN_BUTTON_MENU.classList.remove('header__menu_hidden');
       SELECTORS.OPEN_BUTTON_MENU.classList.add('header__menu_visible');
     }
@@ -50,20 +50,20 @@ export default class Popup {
 
   renderState(props) {
     if (props.isLoggedIn) {
-      SELECTORS.AUTH_BUTTON.classList.add('header__button_visible');
-      SELECTORS.AUTH_BUTTON.classList.remove('header__button_hidden');
-      SELECTORS.LOGOUT_BUTTON.classList.add('header__button_visible');
-      SELECTORS.LOGOUT_BUTTON.classList.remove('header__button_hidden');
-      SELECTORS.LOGOUT_BUTTON.textContent = props.userName;
-      SELECTORS.SAVEDNEWS_LINK.classList.add('header__link-wrapper_visible');
+      SELECTORS.AUTH_BUTTON_MENU.classList.remove('header__button_visible');
+      SELECTORS.AUTH_BUTTON_MENU.classList.add('header__button_hidden');
+      SELECTORS.LOGOUT_BUTTON_MENU.classList.add('header__button_visible');
+      SELECTORS.LOGOUT_BUTTON_MENU.classList.remove('header__button_hidden');
+      SELECTORS.LOGOUT_BUTTON_MENU.children[0].textContent = props.userName;
+      SELECTORS.SAVEDNEWS_LINK_MENU.classList.add('header__link-wrapper_visible');
       SELECTORS.SAVEDNEWS_LINK.classList.remove('header__link-wrapper_hidden');
     } else {
-      SELECTORS.AUTH_BUTTON.classList.add('header__button_hidden');
-      SELECTORS.AUTH_BUTTON.classList.remove('header__button_visible');
-      SELECTORS.LOGOUT_BUTTON.classList.add('header__button_hidden');
-      SELECTORS.LOGOUT_BUTTON.classList.remove('header__button_visible');
-      SELECTORS.SAVEDNEWS_LINK.classList.add('header__link-wrapper_hidden');
-      SELECTORS.SAVEDNEWS_LINK.classList.remove('header__link-wrapper_visible');
+      SELECTORS.AUTH_BUTTON_MENU.classList.remove('header__button_hidden');
+      SELECTORS.AUTH_BUTTON_MENU.classList.add('header__button_visible');
+      SELECTORS.LOGOUT_BUTTON_MENU.classList.add('header__button_hidden');
+      SELECTORS.LOGOUT_BUTTON_MENU.classList.remove('header__button_visible');
+      SELECTORS.SAVEDNEWS_LINK_MENU.classList.add('header__link-wrapper_hidden');
+      SELECTORS.SAVEDNEWS_LINK_MENU.classList.remove('header__link-wrapper_visible');
     }
   }
 }

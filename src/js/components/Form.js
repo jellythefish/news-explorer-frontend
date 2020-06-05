@@ -13,7 +13,7 @@ export default class Form {
     form.addEventListener('submit', this._submitForm.bind(this));
   }
 
-  setServerError(error) {
+  _setServerError(error) {
     const currentError = this._errorList.find((elem) => elem.getAttribute('data-for-element') === 'common');
     if (error === 'user') {
       currentError.textContent = MESSAGES.USER_EXISTS;
@@ -21,6 +21,8 @@ export default class Form {
       currentError.textContent = MESSAGES.INVALID_CREDENTIALS;
     } else if (error === 'unknown') {
       currentError.textContent = MESSAGES.SOMETHING_WRONG;
+    } else if (error === 'clear') {
+      currentError.textContent = '';
     }
     this._setButtonState('enable');
   }
@@ -47,26 +49,38 @@ export default class Form {
   _submitForm(event) {
     event.preventDefault();
     if (this._form.name === 'sign-up') {
+      this._setServerError('clear');
       this._setButtonState('loading');
-      const { name, email, password } = this._getInfo();
-      this._api.signUp(name, email, password)
+      this._renderInput('block');
+      const { username, email, password } = this._getInfo();
+      this._api.signUp(email, password, username)
         .then((res) => {
           this._clear();
           this._popup.close(event);
           this._successPopup.open(event);
         })
-        .catch((error) => this._setServerError(error));
+        .catch(() => {
+          this._setServerError('user');
+          this._setButtonState('enable');
+          this._renderInput('unblock');
+        });
     } else if (this._form.name === 'sign-in') {
+      this._setServerError('clear');
       this._setButtonState('loading');
+      this._renderInput('block');
       const { email, password } = this._getInfo();
       this._api.signIn(email, password)
         .then((res) => {
           window.localStorage.setItem('jwt', res.jwt);
           this._clear();
           this._popup.close(event);
-          this._header.render({ isLoggedIn: true, userName: res });
+          this._header.render({ isLoggedIn: true, userName: res.name });
         })
-        .catch((error) => this._setServerError(error));
+        .catch(() => {
+          this._setServerError('credentials');
+          this._setButtonState('enable');
+          this._renderInput('unblock');
+        });
     }
   }
 
@@ -95,8 +109,8 @@ export default class Form {
   }
 
   _setButtonState(state) {
-    if (this._type === 'sign-up') this._submitButton.textContent = 'Войти';
-    if (this._type === 'sign-in') this._submitButton.textContent = 'Зарегистрироваться';
+    if (this._form.name === 'sign-in') this._submitButton.textContent = 'Войти';
+    if (this._form.name === 'sign-up') this._submitButton.textContent = 'Зарегистрироваться';
     if (state === 'enable') {
       this._submitButton.removeAttribute('disabled');
       this._submitButton.classList.remove('popup__button_disabled');
@@ -106,10 +120,22 @@ export default class Form {
       this._submitButton.classList.add('popup__button_disabled');
       this._submitButton.classList.remove('popup__button_enabled');
     } else if (state === 'loading') {
-      this._submitButton.textContent = 'Загрука...';
+      this._submitButton.textContent = 'Загрузка...';
       this._submitButton.setAttribute('disabled', 'true');
       this._submitButton.classList.add('popup__button_disabled');
       this._submitButton.classList.remove('popup__button_enabled');
+    }
+  }
+
+  _renderInput(state) {
+    if (state === 'block') {
+      this._form.elements.forEach((element) => {
+        element.setAttribute('disabled', 'true');
+      });
+    } else {
+      this._form.elements.forEach((element) => {
+        element.removeAttribute('disabled');
+      });
     }
   }
 }

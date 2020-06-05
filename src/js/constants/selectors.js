@@ -8,6 +8,7 @@ export default {
   CLOSE_BUTTON_MENU: document.querySelector('.js-button-menu-close'),
   AUTH_BUTTON_MENU: document.querySelector('.js-button-menu-auth'),
   LOGOUT_BUTTON_MENU: document.querySelector('.js-button-menu-logout'),
+  SAVEDNEWS_LINK_MENU: document.querySelector('.js-link-menu-savednews'),
   MENU_POPUP: document.querySelector('.js-popup-menu'),
   SIGNIN_POPUP: document.querySelector('.js-popup-sign-in'),
   SIGNUP_POPUP: document.querySelector('.js-popup-sign-up'),

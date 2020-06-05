@@ -12,13 +12,13 @@ const mainApi = new MainApi();
 const menuPopup = new Popup(SELECTORS.MENU_POPUP, [SELECTORS.OPEN_BUTTON_MENU],
   SELECTORS.CLOSE_BUTTON_MENU, true);
 const header = new Header(SELECTORS.AUTH_BUTTON, SELECTORS.LOGOUT_BUTTON,
-  SELECTORS.SAVEDNEWS_LINK, menuPopup);
+  SELECTORS.LOGOUT_BUTTON_MENU, SELECTORS.SAVEDNEWS_LINK, menuPopup, mainApi);
 
-const JWT_TOKEN = window.localStorage.getItem('jwt');
+const JWT_TOKEN = localStorage.getItem('token');
 if (JWT_TOKEN) {
   mainApi.getUserData()
     .then((res) => {
-      header.render({ isLoggedIn: true, userName: res.name });
+      header.render({ isLoggedIn: true, userName: res.data.name });
     })
     .catch((err) => console.error(err));
 }

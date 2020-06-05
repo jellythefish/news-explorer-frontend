@@ -12,6 +12,7 @@
 @import url('./__popup/header__popup.css');
 @import url('./__buttons-list/header__buttons-list.css');
 @import url('./__button-item/header__button-item.css');
+@import url('./__button-name/header__button-name.css');
 
 .header {
   position: relative;
