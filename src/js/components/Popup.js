@@ -49,7 +49,9 @@ export default class Popup {
   }
 
   renderState(props) {
-    if (props.isLoggedIn) {
+    if (props.savedNews) {
+      SELECTORS.LOGOUT_BUTTON_MENU.children[0].textContent = props.userName;
+    } else if (props.isLoggedIn) {
       SELECTORS.AUTH_BUTTON_MENU.classList.remove('header__button_visible');
       SELECTORS.AUTH_BUTTON_MENU.classList.add('header__button_hidden');
       SELECTORS.LOGOUT_BUTTON_MENU.classList.add('header__button_visible');

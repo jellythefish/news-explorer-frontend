@@ -10,7 +10,9 @@ export default class Header {
   }
 
   render(props) { // props.isLoggedIn, props.userName
-    if (props.isLoggedIn) {
+    if (props.savedNews) {
+      this._logoutButton.children[0].textContent = props.userName;
+    } else if (props.isLoggedIn) {
       this._authButton.classList.remove('header__button_visible');
       this._authButton.classList.add('header__button_hidden');
       this._logoutButton.classList.add('header__button_visible');
@@ -32,6 +34,6 @@ export default class Header {
   _logout() {
     return this._api.logout()
       .then((res) => window.location.reload())
-      .catch((err) => window.alert(err));
+      .catch((err) => console.error(err));
   }
 }
