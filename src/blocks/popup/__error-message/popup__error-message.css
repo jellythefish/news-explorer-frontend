@@ -5,8 +5,7 @@
 @import url('./_creds/popup__error-message_creds.css');
 
 .popup__error-message {
-  margin: 0;
-  position: absolute;
+  text-align: center;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;

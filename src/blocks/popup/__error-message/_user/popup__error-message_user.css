@@ -1,18 +1,3 @@
 .popup__error-message_user {
-  top: 331px;
-  left: 105px;
-}
-
-@media screen and (max-width: 410px) {
-  .popup__error-message_user {
-    top: 317px;
-    left: calc((100vw - 174.88px) / 2 - 20px);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .popup__error-message_user {
-    top: 317px;
-    left: 52px;
-  }
+  margin: 20px auto 0;
 }

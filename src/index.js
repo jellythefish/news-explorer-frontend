@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './index.css';
 import SELECTORS from './js/constants/selectors';
 import Header from './js/components/Header';
@@ -38,4 +39,3 @@ const signInForm = new Form(SELECTORS.SIGNIN_FORM, SELECTORS.SIGNIN_ERRORS,
   SELECTORS.SIGNIN_SUBMIT_BUTTON, mainApi, header, signInPopup, successPopup);
 const signUpForm = new Form(SELECTORS.SIGNUP_FORM, SELECTORS.SIGNUP_ERRORS,
   SELECTORS.SIGNUP_SUBMIT_BUTTON, mainApi, header, signUpPopup, successPopup);
-

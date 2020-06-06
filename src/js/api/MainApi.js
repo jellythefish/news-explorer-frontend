@@ -12,11 +12,12 @@ export default class MainApi {
       credentials: 'include',
       body: JSON.stringify({ email, password, name }),
     })
+      .then((res) => res.json())
       .then((res) => {
-        if (res.ok) {
-          return res.json();
+        if (res.statusCode >= 400) {
+          return Promise.reject(res.message);
         }
-        return Promise.reject(new Error(`Код: ${res.status}, Ошибка: ${res.message}`));
+        return res;
       })
       .catch((err) => Promise.reject(err));
   }
@@ -29,11 +30,12 @@ export default class MainApi {
       },
       body: JSON.stringify({ email, password }),
     })
+      .then((res) => res.json())
       .then((res) => {
-        if (res.ok) {
-          return res.json();
+        if (res.statusCode >= 400) {
+          return Promise.reject(res.message);
         }
-        return Promise.reject(new Error(`Код: ${res.status}, Ошибка: ${res.message}`));
+        return res;
       })
       .then((data) => {
         localStorage.setItem('token', data.token);

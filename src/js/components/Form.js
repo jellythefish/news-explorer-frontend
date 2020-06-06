@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import MESSAGES from '../constants/messages';
 
 export default class Form {
@@ -15,14 +16,12 @@ export default class Form {
 
   _setServerError(error) {
     const currentError = this._errorList.find((elem) => elem.getAttribute('data-for-element') === 'common');
-    if (error === 'user') {
-      currentError.textContent = MESSAGES.USER_EXISTS;
-    } else if (error === 'credentials') {
-      currentError.textContent = MESSAGES.INVALID_CREDENTIALS;
-    } else if (error === 'unknown') {
-      currentError.textContent = MESSAGES.SOMETHING_WRONG;
-    } else if (error === 'clear') {
+    if (error === 'clear') {
       currentError.textContent = '';
+    } else if (error) {
+      currentError.textContent = error;
+    } else {
+      currentError.textContent = MESSAGES.SOMETHING_WRONG;
     }
     this._setButtonState('enable');
   }
@@ -58,9 +57,10 @@ export default class Form {
           this._clear();
           this._popup.close(event);
           this._successPopup.open(event);
+          this._renderInput('unblock');
         })
-        .catch(() => {
-          this._setServerError('user');
+        .catch((error) => {
+          this._setServerError(error, '/signup');
           this._setButtonState('enable');
           this._renderInput('unblock');
         });
@@ -75,9 +75,10 @@ export default class Form {
           this._clear();
           this._popup.close(event);
           this._header.render({ isLoggedIn: true, userName: res.name });
+          this._renderInput('unblock');
         })
-        .catch(() => {
-          this._setServerError('credentials');
+        .catch((error) => {
+          this._setServerError(error, '/signin');
           this._setButtonState('enable');
           this._renderInput('unblock');
         });
