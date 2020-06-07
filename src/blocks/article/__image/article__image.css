@@ -1,6 +1,8 @@
 .article__image {
   width: 400px;
   height: 272px;
+  object-fit: cover;
+  object-position: center;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
