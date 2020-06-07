@@ -2,7 +2,7 @@
 
 [![version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/jellythefish/news-explorer-frontend/tree/v1.0.0) [![node version](https://img.shields.io/badge/node-12.16.2-green.svg)](https://nodejs.org/en/) [![npm version](https://img.shields.io/badge/npm-6.14.4-red.svg)](https://nodejs.org/en/) [![npm version](https://img.shields.io/badge/build-passing-green.svg)]()
 
-https://jellythefish.github.io/news-explorer-frontend
+https://www.the-news-explorer.tk/
 
 ## Содержание
 
