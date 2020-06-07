@@ -26,10 +26,11 @@ export default class Popup {
   }
 
   _backgroundCloseClick(event) {
-    if (!(event || event.target)) return;
-    if (event.target.classList.contains('popup')) this.close(event);
-    else if (!(event.target.closest('div').classList.contains('header__popup') || event.target.classList.contains('header__menu'))
-    && this._element.classList.contains('header__popup_visible')) this.close(event);
+    if (event.target.classList.contains('popup')) 
+      this.close(event);
+    else if (!((event.target.closest('div') && event.target.closest('div').classList.contains('header__popup'))  
+    || event.target.classList.contains('header__menu')) && this._element.classList.contains('header__popup_visible')) 
+      this.close(event);
   }
 
   _escClosePress(event) {
