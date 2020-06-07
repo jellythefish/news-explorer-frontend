@@ -1,16 +1,18 @@
 /* eslint-disable no-unused-vars */
 import MESSAGES from '../constants/messages';
+import DATE_FORMATTERS from '../utils/formate-date';
 
 export default class Form {
-  constructor(form, errors, submitButton, api, header, popup, successPopup) {
+  constructor(form, submitButton, api, cardList, errors, header, popup, successPopup) {
     this._form = form;
-    this._errorList = Array.from(errors);
+    this._errorList = errors ? Array.from(errors) : undefined;
     this._submitButton = submitButton;
     this._api = api;
     this._header = header;
     this._popup = popup;
     this._successPopup = successPopup;
-    form.addEventListener('input', this._validateInputElement.bind(this));
+    this._cardList = cardList;
+    if (errors) form.addEventListener('input', this._validateInputElement.bind(this));
     form.addEventListener('submit', this._submitForm.bind(this));
   }
 
@@ -63,6 +65,7 @@ export default class Form {
           this._setServerError(error, '/signup');
           this._setButtonState('enable');
           this._renderInput('unblock');
+          console.error(error);
         });
     } else if (this._form.name === 'sign-in') {
       this._setServerError('clear');
@@ -81,6 +84,33 @@ export default class Form {
           this._setServerError(error, '/signin');
           this._setButtonState('enable');
           this._renderInput('unblock');
+          console.error(error);
+        });
+    } else if (this._form.name === 'search') {
+      this._renderInput('block');
+      this._cardList.renderResults(undefined, 'disable');
+      this._cardList.renderError('disable');
+      this._cardList.renderLoader('enable');
+      this._cardList.renderShowMoreButton('enable');
+      const keywords = this._form.children[0].value;
+      const nowDate = new Date();
+      const from = DATE_FORMATTERS.nthDaysAgoFromDate(nowDate, 7);
+      const to = DATE_FORMATTERS.apiDate(nowDate);
+      this._api.getNews(keywords, from, to)
+        .then((res) => {
+          this._clear();
+          this._renderInput('unblock');
+          this._cardList.renderLoader('disable');
+          this._cardList.addCards(res);
+          this._cardList.renderResults(undefined, 'enable');
+        })
+        .catch((err) => {
+          this._renderInput('unblock');
+          this._cardList.renderLoader('disable');
+          this._cardList.renderResults(undefined, 'disable');
+          if (typeof err !== 'string') this._cardList.renderError('error');
+          else this._cardList.renderError('enable');
+          console.error(err);
         });
     }
   }
@@ -97,7 +127,7 @@ export default class Form {
 
   _clear() {
     this._form.reset();
-    this._setButtonState('disable');
+    if (!this._submitButton.classList.contains('search__button')) this._setButtonState('disable');
   }
 
   _getInfo() {

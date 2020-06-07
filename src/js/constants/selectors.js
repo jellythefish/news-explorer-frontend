@@ -25,4 +25,13 @@ export default {
   SIGNIN_SUBMIT_BUTTON: document.querySelector('.js-submit-sign-in'),
   SIGNUP_ERRORS: document.querySelectorAll('.js-sign-up-error'),
   SIGNIN_ERRORS: document.querySelectorAll('.js-sign-in-error'),
+  SEARCH_FORM: document.forms.search,
+  SEARCH_BUTTON: document.querySelector('.search__button'),
+  NEWSCARDS_CONTAINER: document.querySelector('.article-grid'),
+  RESULTS_NOTFOUND: document.querySelector('.results__not-found'),
+  RESULTS_PRELOADING: document.querySelector('.results__preloading'),
+  SHOWMORE_BUTTON: document.querySelector('.results__more'),
+  RESULTS_CONTAINER: document.querySelector('.results__container'),
+  RESULTS_ERROR: document.querySelector('.results__not-found-text'),
+  RESULTS_TITLE_ERROR: document.querySelector('.results__not-found-title'),
 };

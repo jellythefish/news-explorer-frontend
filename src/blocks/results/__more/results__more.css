@@ -1,7 +1,9 @@
+@import url('./_hidden/results__more_hidden.css');
+@import url('./_visible/results__more_visible.css');
+
 .results__more {
   width: 288px;
   height: 64px;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto 80px;

@@ -11,7 +11,7 @@ const header = new Header(undefined, SELECTORS.LOGOUT_BUTTON,
   SELECTORS.LOGOUT_BUTTON_MENU, SELECTORS.SAVEDNEWS_LINK, menuPopup, mainApi);
 
 mainApi.getUserData()
-    .then((res) => {
-      header.render({ savedNews: true, userName: res.data.name });
-    })
-    .catch((err) => console.error(err));
+  .then((res) => {
+    header.render({ savedNews: true, userName: res.data.name });
+  })
+  .catch((err) => console.error(err));

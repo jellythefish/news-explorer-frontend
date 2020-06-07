@@ -78,7 +78,9 @@ export default class MainApi {
 
   getArticles() {}
 
-  createArticle() {}
+  createArticle() {
+    
+  }
 
   removeArticle() {}
 }

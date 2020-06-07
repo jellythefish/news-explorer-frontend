@@ -1,18 +1,22 @@
 .article__image {
   width: 400px;
+  height: 272px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
 @media screen and (max-width: 1440px) {
   .article__image {
+    height: 18.8888vw;
     width: 27.7777vw;
     min-width: 224px;
+    min-height: 150px;
   }
 }
 
 @media screen and (max-width: 732px) {
   .article__image {
     width: 288px;
+    height: 196px;
   }
 }

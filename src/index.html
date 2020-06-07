@@ -62,8 +62,8 @@
     <section class="search">
       <h2 class="search__title">Что в мире<br>творится?</h2>
       <p class="search__description">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
-      <form class="search__field">
-        <input required class="search__input" type="text" placeholder="Введите тему новости">
+      <form class="search__field" name="search">
+        <input class="search__input" type="text" placeholder="Введите тему новости" required>
         <button class="button search__button" type="submit">Искать</button>
       </form>
     </section>
@@ -77,60 +77,24 @@
         <h3 class="results__not-found-title">Ничего не найдено</h3>
         <p class="results__not-found-text">К сожалению по вашему запросу ничего не найдено.</p>
       </div>
-      <div class="results__container results__container_visible">
+      <div class="results__container results__container_hidden">
         <h2 class="results__title">Результаты поиска</h2>
-        <ul class="article-grid">
-          <li class="article">
-            <img src="<%= require('./images/card-1.jpg').default %>" alt="card-1" class="article__image">
-            <button class="article__icon article__icon_save-normal"></button>
-            <button class="article__icon-helper">Войдите, чтобы сохранять статьи</button>
-            <div class="article__text-content">
-              <p class="article__date">2 августа, 2019</p>
-              <h3 class="article__title">Национальное достояние – парки</h3>
-              <p class="article__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться
-                система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <h4 class="article__source">Лента.ру</h4>
-            </div>
-          </li>
-          <li class="article">
-            <img src="<%= require('./images/card-2.jpg').default %>" alt="card-2" class="article__image">
-            <button class="article__icon article__icon_save-normal"></button>
-            <button class="article__icon-helper article__icon-helper_visible">Войдите, чтобы сохранять статьи</button>
-            <div class="article__text-content">
-              <p class="article__date">2 августа, 2019</p>
-              <h3 class="article__title">Лесные огоньки: история одной фотографии</h3>
-              <p class="article__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы
-                запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-              <h4 class="article__source">Медуза</h4>
-            </div>
-          </li>
-          <li class="article">
-            <img src="<%= require('./images/card-3.jpg').default %>" alt="card-3" class="article__image">
-            <button class="article__icon article__icon_save-marked"></button>
-            <button class="article__icon-helper article__icon-helper_hidden">Войдите, чтобы сохранять статьи</button>
-            <div class="article__text-content">
-              <p class="article__date">2 августа, 2019</p>
-              <h3 class="article__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="article__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о
-                необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-              <h4 class="article__source">Риа</h4>
-            </div>
-          </li>
-        </ul>
-        <button class="results__more">Показать еще</button>
+        <ul class="article-grid"></ul>
+        <button class="results__more results__more_visible">Показать еще</button>
       </div>
     </section>
     <section class="author">
       <picture class="author__picture">
-        <source media="(max-width: 768px)" srcset="<%= require('./images/profile-pic_medium.png').default %>">
-        <source media="(max-width: 320px)" srcset="<%= require('./images/profile-pic_small.png').default %>">
+        <source media="(max-width: 768px)" srcset="<%= require('./images/profile-pic_medium.jpg').default %>">
+        <source media="(max-width: 320px)" srcset="<%= require('./images/profile-pic_small.jpg').default %>">
         <img class="author__profile-pic" src="<%= require('./images/profile-pic_large.jpg').default %>" alt="Profile picture">
       </picture>
       <div class="author__info">
         <h2 class="author__title">Об авторе</h2>
-        <p class="author__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь,
-          какими технологиями разработки владеете.<br><br>Также можно рассказать о процессе обучения в Практикуме, чему вы тут
-          научились, и чем можете помочь потенциальным заказчикам.</p>
+        <p class="author__text">Всем привет! Меня зовут Святослав Краснов. Я занимаюсь веб-разработкой и бэкенд разработкой.
+          <br><br>На курсах Яндекс.Практикума я подробно изучил Node.js, чистый JS, HTML/CSS, систему сборки Wepback, Git и MongoDB,
+          поэтому могу создать полноценное веб-приложение, начиная с верстки и заканчивая конечным деплоем на сервер.
+          Я также учусь на 3 курсе факультета компьютерных наук НИУ ВШЭ, хорошо знаю C/C++, Python и даже ассемблер ;)</p>
       </div>
     </section>
     <section class="popup popup_hidden js-popup-sign-in">
@@ -178,7 +142,7 @@
       </div>
     </section>
     <footer class="footer">
-      <p class="footer__copyright">© 2020 Supersite, Powered by News API</p>
+      <p class="footer__copyright">© 2020 NewsExplorer, Powered by News API</p>
       <div class="footer__links">
         <ul class="footer__text-links">
           <li class="footer__link-item footer__link-item_text">

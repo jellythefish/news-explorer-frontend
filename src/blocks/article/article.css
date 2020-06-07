@@ -7,13 +7,13 @@
 @import url('./__text/article__text.css');
 @import url('./__title/article__title.css');
 @import url('./__text-content/article__text-content.css');
+@import url('./__link/article__link.css');
 
 .article {
   position: relative;
   height: 576px;
   border-radius: 15px;
   background-color: #fff;
-  cursor: pointer;
   box-shadow: 0px -5px 3px rgba(14, 26, 57, 0);
   transition: box-shadow 0.2s linear 0s;
 }
