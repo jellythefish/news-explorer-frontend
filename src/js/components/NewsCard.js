@@ -68,6 +68,7 @@ export default class NewsCard {
     cardImage.setAttribute('alt', 'Карточка');
 
     const saveButton = document.createElement('button'); saveButton.classList.add('article__icon');
+    if (!this._api.loggedIn) saveButton.setAttribute('disabled', 'true');
     if (this._type !== 'default') {
       saveButton.classList.add('article__icon_delete');
     } else {
