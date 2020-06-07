@@ -84,7 +84,8 @@ export default class NewsCard {
     const textContent = document.createElement('div'); textContent.classList.add('article__text-content');
 
     const date = document.createElement('p'); date.classList.add('article__date');
-    date.textContent = DATE_FORMATTERS.cardDate(new Date(articleDate));
+    if (this._type === 'default') date.textContent = DATE_FORMATTERS.cardDate(new Date(articleDate));
+    else date.textContent = articleDate;
 
     const title = document.createElement('h3'); title.classList.add('article__title');
     title.textContent = articleTitle;

@@ -70,9 +70,9 @@ export default class NewsCardList {
 
   renderSavedNews() {
     this.savedCards.forEach((card) => {
+      const date = DATE_FORMATTERS.cardDate(new Date(Number.parseInt(card.date)));
       const newsCard = new this._cardClass(this.savedCards, card.keyword, card.source, card.title,
-        card.text, card.link, card.image, DATE_FORMATTERS.cardDate(new Date(Number.parseInt(card.date))), 
-        this._api, this._type, card._id);
+        card.text, card.link, card.image, date, this._api, this._type, card._id);
       this._articlesContainer.appendChild(newsCard.cardElement);
       this._cardList.push(newsCard);
     })
