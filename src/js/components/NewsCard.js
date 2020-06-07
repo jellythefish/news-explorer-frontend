@@ -1,5 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import DATE_FORMATTERS from '../utils/formate-date';
+import LINKS from '../constants/links';
 
 export default class NewsCard {
   constructor(savedCards, articleKeywords, articleSource, articleTitle, articleText, articleUrl,
@@ -58,7 +59,13 @@ export default class NewsCard {
     keyword.textContent = articleKeywords;
 
     const cardImage = document.createElement('img'); cardImage.classList.add('article__image');
-    cardImage.setAttribute('src', articleImage); cardImage.setAttribute('alt', 'Карточка');
+    if (!articleImage) {
+      cardImage.setAttribute('src', LINKS.NOT_FOUND_PICTURE);
+      this.cardData.image = LINKS.NOT_FOUND_PICTURE;
+    } else {
+      cardImage.setAttribute('src', articleImage);
+    }
+    cardImage.setAttribute('alt', 'Карточка');
 
     const saveButton = document.createElement('button'); saveButton.classList.add('article__icon');
     if (this._type !== 'default') {
