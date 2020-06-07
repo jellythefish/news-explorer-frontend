@@ -2,7 +2,7 @@ import MESSAGES from '../constants/messages';
 
 export default class NewsCardList {
   constructor(resultsContainer, articlesContainer, preloadingContainer, notFoundContainer,
-    showMoreButton, errorElement, dependencies) {
+    showMoreButton, errorElement, api, dependencies) {
     this._articlesContainer = articlesContainer;
     this._resultsContainer = resultsContainer;
     this._preloadingContainer = preloadingContainer;
@@ -12,12 +12,25 @@ export default class NewsCardList {
     this._jsonArray = undefined;
     this._cardClass = dependencies.newsCard;
     this._cardList = [];
+    this._api = api;
     this._index = 0;
+    this._keywords = undefined;
     showMoreButton.addEventListener('click', this.renderResults.bind(this));
+    articlesContainer.addEventListener('click', this.cardHandler.bind(this));
   }
 
-  addCards(json) {
+  cardHandler(event) {
+    const currentCard = this._cardList.find((elem) => elem.cardElement === event.target.closest('.article'));
+    if (event.target.classList.contains('article__icon_save-normal')) {
+      currentCard.save(event);
+    } else if (event.target.classList.contains('article__icon_save-marked')) {
+      currentCard.remove(event);
+    }
+  }
+
+  addCards(json, keywords) {
     this._jsonArray = json.articles;
+    this._keywords = keywords;
     this._cardList = [];
     this._articlesContainer.textContent = '';
   }
@@ -28,8 +41,8 @@ export default class NewsCardList {
       this._resultsContainer.classList.remove('results__container_hidden');
       for (let i = this._index; i < this._index + 3 && i < this._jsonArray.length; i += 1) {
         const data = this._jsonArray[i];
-        const newsCard = new this._cardClass(data.source.name, data.title, data.description,
-          data.url, data.urlToImage, data.publishedAt);
+        const newsCard = new this._cardClass(this._keywords, data.source.name, data.title,
+          data.description, data.url, data.urlToImage, data.publishedAt, this._api);
         this._articlesContainer.appendChild(newsCard.cardElement);
         this._cardList.push(newsCard);
       }

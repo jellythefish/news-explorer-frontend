@@ -2,35 +2,42 @@
 import DATE_FORMATTERS from '../utils/formate-date';
 
 export default class NewsCard {
-  constructor(articleSource, articleTitle, articleText, articleUrl, articleImage, articleDate, api) {
-    this.cardElement = this._create(articleSource, articleTitle, articleText,
+  constructor(articleKeywords, articleSource, articleTitle, articleText, articleUrl,
+    articleImage, articleDate, api) {
+    this.cardElement = this._create(articleKeywords, articleSource, articleTitle, articleText,
       articleUrl, articleImage, articleDate);
     this._cardIcon = undefined;
     this._helper = undefined;
     this._date = undefined;
+    this._cardData = {};
     this._saved = false;
     this._api = api;
   }
 
   save(event) {
     if (!this._saved) {
-      this._api.createArticle()
+      this._api.createArticle(this._cardData.keyword, this._cardData.title, this._cardData.text,
+        this._cardData.date, this._cardData.source, this._cardData.link, this._cardData.image)
         .then((res) => {
           this.renderIcon(event);
+          this._cardData.id = res.data._id;
         })
         .catch((err) => console.error(err));
-    } else {
-      this._api.removeArticle()
+    }
+  }
+
+  remove(event) {
+    if (this._saved) {
+      this._api.removeArticle(this._cardData.id)
         .then((res) => {
           this._renderIcon(event);
         })
         .catch((err) => console.error(err));
     }
-
-
   }
 
-  _create(articleSource, articleTitle, articleText, articleUrl, articleImage, articleDate) {
+  _create(articleKeywords, articleSource, articleTitle,
+    articleText, articleUrl, articleImage, articleDate) {
     const card = document.createElement('li'); card.classList.add('article');
 
     const link = document.createElement('a'); link.classList.add('article__link');
@@ -42,7 +49,6 @@ export default class NewsCard {
     const saveButton = document.createElement('button'); saveButton.classList.add('article__icon');
     saveButton.classList.add('article__icon_save-normal');
     this._cardIcon = saveButton;
-    saveButton.addEventListener('click', this.save.bind(this));
 
     const helper = document.createElement('button'); helper.classList.add('article__icon-helper');
     helper.textContent = 'Войдите, чтобы сохранять статьи';
@@ -61,6 +67,16 @@ export default class NewsCard {
 
     const source = document.createElement('h4'); source.classList.add('article__source');
     source.textContent = articleSource;
+
+    this._cardData = {
+      keyword: articleKeywords,
+      title: articleTitle,
+      text: articleText,
+      date: Date.parse(articleDate),
+      source: articleSource,
+      link: articleUrl,
+      image: articleImage,
+    };
 
     link.appendChild(title);
     textContent.appendChild(date); textContent.appendChild(link);

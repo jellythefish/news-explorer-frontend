@@ -76,11 +76,45 @@ export default class MainApi {
       .catch((err) => Promise.reject(err));
   }
 
-  getArticles() {}
-
-  createArticle() {
-    
+  getArticles() {
+    return fetch(`${this.initialURL}/articles`, {
+      credentials: 'include',
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(new Error(`Ошибка: ${res.status}`));
+      })
+      .catch((err) => Promise.reject(err));
   }
 
-  removeArticle() {}
+  createArticle(keyword, title, text, date, source, link, image) {
+    return fetch(`${this.initialURL}/articles`, {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({ keyword, title, text, date, source, link, image }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(new Error(`Ошибка: ${res.status}`));
+      })
+      .catch((err) => Promise.reject(err));
+  }
+
+  removeArticle(articleId) {
+    return fetch(`${this.initialURL}/articles/${articleId}`, {
+      method: 'DELETE',
+      credentials: 'include',
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(new Error(`Ошибка: ${res.status}`));
+      })
+      .catch((err) => Promise.reject(err));
+  }
 }

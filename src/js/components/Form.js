@@ -101,7 +101,7 @@ export default class Form {
           this._clear();
           this._renderInput('unblock');
           this._cardList.renderLoader('disable');
-          this._cardList.addCards(res);
+          this._cardList.addCards(res, keywords);
           this._cardList.renderResults(undefined, 'enable');
         })
         .catch((err) => {
