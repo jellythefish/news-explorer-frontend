@@ -1,6 +1,7 @@
 export default class MainApi {
   constructor() {
     this.initialURL = 'https://api.the-news-explorer.tk';
+    this.loggedIn = false;
   }
 
   signUp(email, password, name) {
@@ -93,6 +94,9 @@ export default class MainApi {
     return fetch(`${this.initialURL}/articles`, {
       method: 'POST',
       credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ keyword, title, text, date, source, link, image }),
     })
       .then((res) => {

@@ -2,38 +2,49 @@
 import DATE_FORMATTERS from '../utils/formate-date';
 
 export default class NewsCard {
-  constructor(articleKeywords, articleSource, articleTitle, articleText, articleUrl,
-    articleImage, articleDate, api) {
-    this.cardElement = this._create(articleKeywords, articleSource, articleTitle, articleText,
-      articleUrl, articleImage, articleDate);
+  constructor(savedCards, articleKeywords, articleSource, articleTitle, articleText, articleUrl,
+    articleImage, articleDate, api, type, articleId) {
+    this.cardData = {
+      keyword: articleKeywords,
+      title: articleTitle,
+      text: articleText,
+      date: Date.parse(articleDate),
+      source: articleSource,
+      link: articleUrl,
+      image: articleImage,
+      savedCards: savedCards,
+      id: articleId,
+    };
+
+    this.savedCards = savedCards;
+    this._api = api;
+    this._type = type;
     this._cardIcon = undefined;
     this._helper = undefined;
     this._date = undefined;
-    this._cardData = {};
-    this._saved = false;
-    this._api = api;
+    this.saved = false;
+    this.cardElement = this._create(articleKeywords, articleSource, articleTitle, articleText,
+      articleUrl, articleImage, articleDate);
   }
 
   save(event) {
-    if (!this._saved) {
-      this._api.createArticle(this._cardData.keyword, this._cardData.title, this._cardData.text,
-        this._cardData.date, this._cardData.source, this._cardData.link, this._cardData.image)
-        .then((res) => {
-          this.renderIcon(event);
-          this._cardData.id = res.data._id;
-        })
-        .catch((err) => console.error(err));
-    }
+    this._api.createArticle(this.cardData.keyword, this.cardData.title, this.cardData.text,
+      this.cardData.date, this.cardData.source, this.cardData.link, this.cardData.image)
+      .then((res) => {
+        this.saved = true;
+        this.renderIcon(event);
+        this.cardData.id = res.data._id;
+      })
+      .catch((err) => console.error(err));
   }
 
   remove(event) {
-    if (this._saved) {
-      this._api.removeArticle(this._cardData.id)
-        .then((res) => {
-          this._renderIcon(event);
-        })
-        .catch((err) => console.error(err));
-    }
+    this._api.removeArticle(this.cardData.id)
+      .then((res) => {
+        this.saved = false;
+        this.renderIcon(event);
+      })
+      .catch((err) => console.error(err));
   }
 
   _create(articleKeywords, articleSource, articleTitle,
@@ -43,15 +54,31 @@ export default class NewsCard {
     const link = document.createElement('a'); link.classList.add('article__link');
     link.setAttribute('href', articleUrl); link.setAttribute('target', '_blank');
 
+    const keyword = document.createElement('p'); keyword.classList.add('article__tag');
+    keyword.textContent = articleKeywords;
+
     const cardImage = document.createElement('img'); cardImage.classList.add('article__image');
     cardImage.setAttribute('src', articleImage); cardImage.setAttribute('alt', 'Карточка');
 
     const saveButton = document.createElement('button'); saveButton.classList.add('article__icon');
-    saveButton.classList.add('article__icon_save-normal');
+    if (this._type !== 'default') {
+      saveButton.classList.add('article__icon_delete');
+    } else {
+      if (this.savedCards) {
+        const cardIsSaved = this.savedCards.find((elem) => elem.title === articleTitle);
+        if (cardIsSaved) {
+          this.cardData.id = cardIsSaved._id;
+          saveButton.classList.add('article__icon_save-marked');
+        } else {
+          saveButton.classList.add('article__icon_save-normal');
+        }
+      }
+    }
     this._cardIcon = saveButton;
 
     const helper = document.createElement('button'); helper.classList.add('article__icon-helper');
-    helper.textContent = 'Войдите, чтобы сохранять статьи';
+    if (this._type === 'default') helper.textContent = 'Войдите, чтобы сохранять статьи';
+    else helper.textContent = 'Убрать из сохраненных';
     this._helper = helper;
 
     const textContent = document.createElement('div'); textContent.classList.add('article__text-content');
@@ -68,28 +95,30 @@ export default class NewsCard {
     const source = document.createElement('h4'); source.classList.add('article__source');
     source.textContent = articleSource;
 
-    this._cardData = {
-      keyword: articleKeywords,
-      title: articleTitle,
-      text: articleText,
-      date: Date.parse(articleDate),
-      source: articleSource,
-      link: articleUrl,
-      image: articleImage,
-    };
-
     link.appendChild(title);
     textContent.appendChild(date); textContent.appendChild(link);
     textContent.appendChild(text); textContent.appendChild(source);
+    if (this._type !== 'default') card.appendChild(keyword);
     card.appendChild(cardImage); card.appendChild(saveButton);
-    card.appendChild(helper); card.appendChild(textContent);
+    if (!this._api.loggedIn) card.appendChild(helper); 
+    card.appendChild(textContent);
 
     return card;
   }
 
   renderIcon(event) {
-    this._saved = !this._saved;
-    event.target.classList.toggle('article__icon_save-normal');
-    event.target.classList.toggle('article__icon_save-marked');
+    if (!event.target) {
+      const element = event.cardElement.querySelector('.article__icon');
+      element.classList.remove('article__icon_save-normal');
+      element.classList.add('article__icon_save-marked');
+    } else {
+      if (this.saved) {
+        event.target.classList.remove('article__icon_save-normal');
+        event.target.classList.add('article__icon_save-marked');
+      } else {
+        event.target.classList.add('article__icon_save-normal');
+        event.target.classList.remove('article__icon_save-marked');
+      }
+    }
   }
 }

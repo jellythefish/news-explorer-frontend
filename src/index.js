@@ -17,7 +17,7 @@ const newsApi = new NewsApi();
 const newsCardList = new NewsCardList(SELECTORS.RESULTS_CONTAINER, SELECTORS.NEWSCARDS_CONTAINER,
   SELECTORS.RESULTS_PRELOADING, SELECTORS.RESULTS_NOTFOUND,
   SELECTORS.SHOWMORE_BUTTON, [SELECTORS.RESULTS_ERROR, SELECTORS.RESULTS_TITLE_ERROR],
-  mainApi, { newsCard: NewsCard });
+  mainApi, { newsCard: NewsCard }, 'default');
 const menuPopup = new Popup(SELECTORS.MENU_POPUP, [SELECTORS.OPEN_BUTTON_MENU],
   SELECTORS.CLOSE_BUTTON_MENU, true);
 const header = new Header(SELECTORS.AUTH_BUTTON, SELECTORS.LOGOUT_BUTTON,
@@ -25,9 +25,15 @@ const header = new Header(SELECTORS.AUTH_BUTTON, SELECTORS.LOGOUT_BUTTON,
 
 const JWT_TOKEN = localStorage.getItem('token');
 if (JWT_TOKEN) {
+  mainApi.loggedIn = true;
   mainApi.getUserData()
     .then((res) => {
       header.render({ isLoggedIn: true, userName: res.data.name });
+    })
+    .catch((err) => console.error(err));
+  mainApi.getArticles()
+    .then((res) => {
+      newsCardList.savedCards = res.data;
     })
     .catch((err) => console.error(err));
 }

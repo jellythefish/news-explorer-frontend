@@ -34,4 +34,10 @@ export default {
   RESULTS_CONTAINER: document.querySelector('.results__container'),
   RESULTS_ERROR: document.querySelector('.results__not-found-text'),
   RESULTS_TITLE_ERROR: document.querySelector('.results__not-found-title'),
+  ARTICLES_COUNTER: document.querySelector('.saved-news__counter'),
+  ARTICLES_KEYWORDS: document.querySelector('.saved-news__keywords'),
+  ARTICLES_KEYWORD_1: document.querySelector('.saved-news__keyword-1'),
+  ARTICLES_KEYWORD_2: document.querySelector('.saved-news__keyword-2'),
+  ARTICLES_KEYWORD_OTHERS: document.querySelector('.saved-news__keyword-others'),
+  SAVEDNEWS_CONTAINER: document.querySelector('.saved-news__container'),
 };

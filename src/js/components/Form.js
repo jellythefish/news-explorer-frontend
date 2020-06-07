@@ -75,10 +75,16 @@ export default class Form {
       this._api.signIn(email, password)
         .then((res) => {
           window.localStorage.setItem('jwt', res.jwt);
+          this._api.loggedIn = true;
           this._clear();
           this._popup.close(event);
           this._header.render({ isLoggedIn: true, userName: res.name });
           this._renderInput('unblock');
+          return this._api.getArticles();
+        })
+        .then((res) => {
+          this._cardList.savedCards = res.data;
+          return this._cardList.renderHelpers();
         })
         .catch((error) => {
           this._setServerError(error, '/signin');
