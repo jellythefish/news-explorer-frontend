@@ -6,7 +6,7 @@ import Header from '../js/components/Header';
 import NewsCardList from '../js/components/NewsCardList';
 import NewsCard from '../js/components/NewsCard';
 
-const mainApi = new MainApi();
+const mainApi = new MainApi(); mainApi.loggedIn = true;
 const menuPopup = new Popup(SELECTORS.MENU_POPUP, [SELECTORS.OPEN_BUTTON_MENU],
   SELECTORS.CLOSE_BUTTON_MENU, true);
 const header = new Header(undefined, SELECTORS.LOGOUT_BUTTON,
@@ -40,7 +40,7 @@ function renderStats(username, articleCnt, sortedKeywords) {
     keywords = sortedKeywords.slice(0, 3);
   } else if (sortedKeywords.length > 3) {
     keywords = [sortedKeywords[0], sortedKeywords[1], sortedKeywords.length - 2];
-  } 
+  }
   SELECTORS.ARTICLES_COUNTER.textContent = `${username}, у вас ${articleCnt} сохраненных статей`;
   if (!keywords) return SELECTORS.ARTICLES_KEYWORDS.textContent = '';
   if (keywords.length === 1) {

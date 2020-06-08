@@ -104,7 +104,6 @@ export default class Form {
       const to = DATE_FORMATTERS.apiDate(nowDate);
       this._api.getNews(keywords, from, to)
         .then((res) => {
-          this._clear();
           this._renderInput('unblock');
           this._cardList.renderLoader('disable');
           this._cardList.addCards(res, keywords);
