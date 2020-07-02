@@ -4,6 +4,8 @@
 
 https://www.the-news-explorer.tk/
 
+![](./preview.png)
+
 ## Содержание
 
 * [О проекте](#about)
