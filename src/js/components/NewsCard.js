@@ -40,7 +40,7 @@ export default class NewsCard {
   }
 
   remove(event) {
-    this._api.removeArticle(this.cardData.id)
+    return this._api.removeArticle(this.cardData.id)
       .then((res) => {
         this.saved = false;
         this.renderIcon(event);

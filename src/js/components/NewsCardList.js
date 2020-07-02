@@ -3,7 +3,7 @@ import DATE_FORMATTERS from '../utils/formate-date';
 
 export default class NewsCardList {
   constructor(resultsContainer, articlesContainer, preloadingContainer, notFoundContainer,
-    showMoreButton, errorElement, api, dependencies, type) {
+    showMoreButton, errorElement, api, dependencies, type, stats) {
     this._articlesContainer = articlesContainer;
     this._resultsContainer = resultsContainer;
     this._preloadingContainer = preloadingContainer;
@@ -16,6 +16,7 @@ export default class NewsCardList {
     this.savedCards = [];
     this._api = api;
     this._type = type;
+    this._stats = stats;
     this.keywords = {};
     this._index = 0;
     this._keyword = undefined;
@@ -58,8 +59,18 @@ export default class NewsCardList {
     } else if (event.target.classList.contains('article__icon_save-marked')) {
       currentCard.remove(event);
     } else if (event.target.classList.contains('article__icon_delete')) {
-      currentCard.remove(event);
-      currentCard.cardElement.remove();
+      currentCard.remove(event)
+        .then((res) => {
+          currentCard.cardElement.remove();
+          return this._api.getArticles()
+        })
+        .then((res) => {
+          this.savedCards = res.data;
+          const articleTotal = res.data.length;
+          const sortedKeywords = this._stats.sortKeywords(this.countKeywords());
+          this._stats.renderStats(articleTotal, sortedKeywords);
+        })
+        .catch((err) => console.error(err));
     }
   }
 
