@@ -1,6 +1,8 @@
 .popup__error-message_name {
+  position: absolute;
   top: 312px;
   left: 36px;
+  margin: 0;
 }
 
 @media screen and (max-width: 410px) {
